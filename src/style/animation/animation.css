@@ -1,0 +1,108 @@
+#title {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 7em;
+  z-index: 1;
+  color: white;
+  animation: floatAndBlink 8s linear infinite;
+}
+
+@keyframes floatAndBlink {
+  0% {
+    text-shadow: -1px -1px 0 #100404e9, 1px -1px 0 #02050b, -1px 1px 0 #03131e,
+      1px 1px 0 #031117;
+    color: white;
+  }
+  20% {
+    text-shadow: -2px -2px 0 #100404e9, 2px -2px 0 #1497c7, -2px 2px 0 #1892ea,
+      2px 2px 0 #137fb0;
+    color: white;
+  }
+  50% {
+    text-shadow: -2px -2px 0 #e00e0ee9, 2px -2px 0 #e10f0f, -2px 2px 0 #f60c0c,
+      2px 2px 0 #ef0707;
+    color: #fff1f1e9;
+  }
+  70% {
+    text-shadow: -2px -2px 0 #000000e9, 2px -2px 0 #e10f0f, -2px 2px 0 #f60c0c,
+      2px 2px 0 #ef0707;
+    color: #fff1f1e9;
+  }
+}
+
+#btn_start {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.734);
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4em;
+  z-index: 1;
+  color: rgb(207, 37, 37);
+  border: 0.01em solid transparent;
+  animation: border-color-change 4s linear infinite alternate;
+}
+
+@keyframes border-color-change {
+  0% {
+    border-color: rgb(226, 226, 226);
+    color: rgb(222, 222, 222);
+    background-color: rgba(0, 0, 0, 0.623);
+    background-position: 0 0;
+  }
+  25% {
+    border-color: rgb(20, 152, 196);
+    color: rgb(20, 152, 196);
+  }
+  40% {
+    border-color: rgb(37, 114, 207);
+    color: rgb(37, 114, 207);
+  }
+  60% {
+    border-color: rgb(207, 37, 37);
+    color: rgb(207, 37, 37);
+  }
+  100% {
+    background-position: -200% 0;
+    background-color: rgba(0, 0, 0, 0.601);
+  }
+}
+
+#btn_start:hover {
+  color: rgb(112, 6, 6);
+  border: 0.01em solid rgb(128, 24, 24);
+  transform: scale(1.1);
+}
+
+#title:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  #title {
+    font-size: 3.5em;
+  }
+
+  #btn_start {
+    margin-top: 20px;
+    padding: 10px;
+    width: 40%;
+    font-size: 2em;
+  }
+}

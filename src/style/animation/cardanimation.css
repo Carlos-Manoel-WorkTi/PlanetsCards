@@ -1,0 +1,88 @@
+#container_cards {
+  width: 700px;
+  min-height: 80%;
+  display: flex;
+  justify-content: space-around;
+  column-gap: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
+  align-self: start;
+  background-color: rgba(0, 0, 0, 0.886);
+}
+
+.card {
+  width: 79px;
+  height: 90px;
+  position: relative;
+  perspective: 1000px;
+  z-index: 6;
+}
+
+.card-front,
+.card-back {
+  width: 110%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.card-front {
+  background-image: url("../../../public/game/warped-space-chromebook-wallpaper.jpg");
+  transform: rotateY(0deg);
+  background-size: cover;
+}
+
+.card-back {
+  background-image: url("../../../public/game/moldeCard.png");
+  transform: rotateY(180deg);
+  background-size: cover;
+}
+
+.card.flipped .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
+@media screen and (max-width: 992px) {
+  #container_cards {
+    width: 500px;
+    column-gap: 20px;
+    padding: 10px;
+  }
+  .card {
+    width: 60px;
+    height: 65px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #main {
+    height: 500px;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 0;
+  }
+  #container_cards {
+    width: 80%;
+    min-width: 300px;
+    column-gap: 20px;
+    padding: 10px;
+  }
+
+  .card {
+    width: 50px;
+    height: 8vh;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  #container_cards {
+    column-gap: 10px;
+  }
+}

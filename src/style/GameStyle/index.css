@@ -1,0 +1,133 @@
+#root_game {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../public/game/starry-sky-2675322_1920.jpg");
+  background-size: cover;
+  overflow: hidden;
+  color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root_game::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(2, 10, 31, 0.679), rgba(0, 0, 0, 0));
+  opacity: 0.8;
+  z-index: 5;
+}
+#main {
+  height: 600px;
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header_game {
+  height: 55px;
+  width: 100%;
+  background: linear-gradient(to bottom, black 20%, transparent);
+  display: flex;
+  justify-content: center;
+  gap: 15%;
+  padding: 10px 10px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  /* margin-bottom: 5%; */
+}
+
+#opt {
+  padding-right: 20px;
+}
+
+#opt img {
+  width: 50px;
+}
+
+#menu img {
+  height: 30px;
+}
+
+#watch {
+  height: 40px;
+}
+
+#btn_audio {
+  height: 30px;
+}
+
+#btn_repeat {
+  height: 30px;
+}
+
+#container_time {
+  width: 160px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.83);
+  border: 1px solid white;
+  height: 60px;
+}
+
+#time {
+  font-size: 2em;
+}
+
+/* MENU */
+/* 
+#container_menu {
+  
+  width: 21%;
+  height: 50%;
+  z-index: 8;
+  position: absolute;
+  background-color: rgb(7, 6, 6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.278);
+}
+#root_game::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 7;
+}
+#container_menu ul {
+  list-style: none;
+  padding: 0;
+}
+#container_menu ul li {
+  list-style: none;
+  font-size: 2em;
+  margin: 10px;
+} */
+
+@media screen and (max-width: 600px) {
+  #container_time {
+    width: 130px;
+    margin-top: -2px;
+    height: 40px;
+    padding: 2px;
+    margin-left: 3px;
+  }
+
+  #time {
+    font-size: 1.5em;
+  }
+  #watch {
+    height: 35px;
+  }
+}
