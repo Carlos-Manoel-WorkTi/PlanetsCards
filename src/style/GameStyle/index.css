@@ -70,11 +70,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: -10px;
+  margin-top: -4px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.83);
   border: 1px solid white;
-  height: 60px;
+  height: 55px;
 }
 
 #time {

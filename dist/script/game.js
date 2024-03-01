@@ -1,36 +1,128 @@
 "use strict";
 const planets = [
-    "Mercúrio",
-    "Terra",
-    "Terra",
-    "Marte",
-    "Júpiter",
-    "Saturno",
-    "Urano",
-    "Netuno",
-    "Plutão",
-    "Ceres",
-    "Éris",
-    "Sol",
-    "Haumea",
-    "Makemake",
-    "Gonggong",
-    "Mercúrio",
-    "Vênus",
-    "Terra",
-    "Marte",
-    "Júpiter",
-    "Saturno",
-    "Urano",
-    "Netuno",
-    "Plutão",
-    "Ceres",
-    "Éris",
-    "Haumea",
-    "Makemake",
-    "Gonggong",
-    "Sol",
+    {
+        name: "Mercúrio",
+        image: "../../public/game/CardsIMG/mercurio.png",
+    },
+    {
+        name: "Terra",
+        image: "../../public/game/CardsIMG//terra.png",
+    },
+    {
+        name: "Marte",
+        image: "../../public/game/CardsIMG/marte.png",
+    },
+    {
+        name: "Júpiter",
+        image: "../../public/game/CardsIMG/jpt.png",
+    },
+    {
+        name: "Saturno",
+        image: "../../public/game/CardsIMG/saturno.png",
+    },
+    {
+        name: "Urano",
+        image: "../../public/game/CardsIMG/urano.png",
+    },
+    {
+        name: "Netuno",
+        image: "../../public/game/CardsIMG/netuno.png",
+    },
+    {
+        name: "Plutão",
+        image: "../../public/game/CardsIMG/",
+    },
+    {
+        name: "Ceres",
+        image: "../../public/game/CardsIMG/ceres.png",
+    },
+    {
+        name: "Éris",
+        image: "../../public/game/CardsIMG/eris.png",
+    },
+    {
+        name: "Sol",
+        image: "../../public/game/CardsIMG/sol.png",
+    },
+    {
+        name: "Haumea",
+        image: "../../public/game/CardsIMG/haumea.png",
+    },
+    {
+        name: "Makemake",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fplanetas.fandom.com%2Fpt-br%2Fwiki%2FMakemake&psig=AOvVaw2BTxbdyOEbtgqJ-lAxOEiU&ust=1709329569819000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPCioYHD0YQDFQAAAAAdAAAAABAE",
+    },
+    {
+        name: "Gonggong",
+        image: "https://i.ytimg.com/vi/QYkR7r5Xz14/hqdefault.jpg",
+    },
+    {
+        name: "Vênus",
+        image: "https://uploads.metropoles.com/wp-content/uploads/2021/07/26170510/venus-em-virgem-17876.jpg",
+    },
+    {
+        name: "Mercúrio",
+        image: "../../public/game/CardsIMG/mercurio.png",
+    },
+    {
+        name: "Terra",
+        image: "../../public/game/CardsIMG//terra.png",
+    },
+    {
+        name: "Marte",
+        image: "../../public/game/CardsIMG/marte.png",
+    },
+    {
+        name: "Júpiter",
+        image: "../../public/game/CardsIMG/jpt.png",
+    },
+    {
+        name: "Saturno",
+        image: "../../public/game/CardsIMG/saturno.png",
+    },
+    {
+        name: "Urano",
+        image: "../../public/game/CardsIMG/urano.png",
+    },
+    {
+        name: "Netuno",
+        image: "../../public/game/CardsIMG/netuno.png",
+    },
+    {
+        name: "Plutão",
+        image: "../../public/game/CardsIMG/",
+    },
+    {
+        name: "Ceres",
+        image: "../../public/game/CardsIMG/ceres.png",
+    },
+    {
+        name: "Éris",
+        image: "../../public/game/CardsIMG/eris.png",
+    },
+    {
+        name: "Sol",
+        image: "../../public/game/CardsIMG/sol.png",
+    },
+    {
+        name: "Haumea",
+        image: "../../public/game/CardsIMG/haumea.png",
+    },
+    {
+        name: "Makemake",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fplanetas.fandom.com%2Fpt-br%2Fwiki%2FMakemake&psig=AOvVaw2BTxbdyOEbtgqJ-lAxOEiU&ust=1709329569819000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPCioYHD0YQDFQAAAAAdAAAAABAE",
+    },
+    {
+        name: "Gonggong",
+        image: "https://i.ytimg.com/vi/QYkR7r5Xz14/hqdefault.jpg",
+    },
+    {
+        name: "Vênus",
+        image: "https://uploads.metropoles.com/wp-content/uploads/2021/07/26170510/venus-em-virgem-17876.jpg",
+    }
 ];
+console.log(planets);
+console.log(planets);
 let Corrects = [];
 const Card = document.getElementsByClassName("card");
 const Container_Cards = document.getElementById("container_cards");
@@ -39,22 +131,23 @@ Container_Cards.addEventListener("click", turnCard);
 window.document.addEventListener("DOMContentLoaded", renderCards);
 // console.log(planets);
 class CardClass {
-    constructor(name_class) {
+    constructor(name_class, img) {
         this.name = name_class;
+        this.link_img = img;
     }
     createCard() {
         return `
       <div class="${this.name} card flipped ">
-        <div class="card-front"></div>
-        <div class="card-back"></div>
+      <div class="card-front" style="background-image: url('${this.link_img}');"></div>
+      <div class="card-back"></div>
       </div>
     `;
     }
 }
 function renderCards() {
     setTimeout(() => {
-        planets.map((name) => {
-            const model_card = new CardClass(name);
+        planets.map((obj) => {
+            const model_card = new CardClass(obj.name, obj.image);
             const card = model_card.createCard();
             Container_Cards.innerHTML += card;
             // console.log(new_card);
