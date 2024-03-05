@@ -5,18 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./dist/script/init.js" defer></script>
+    <script src="./src/routes/routes.js" defer></script>
     <link rel="stylesheet" href="./src/style/index.css">
     <link rel="stylesheet" href="./src/style/animation/animation.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
 
     <title>PlanetsCard</title>
 </head>
 
 <body id="root">
+    <header id="header">
+        <div id="user">
+            <img src="https://source.unsplash.com/random" alt="" id="user_img">
+            <div id="user_inf">
+                <div id="user_name">carlos</div>
+                <div id="level">
+                    <span id="number">01</span>
+                    <div id="barra">
+                        <div id="block_one"></div>
+                        <div id="block_two"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="nav">
+            <span>Entrar</span>
+            <span>Cadastrar</span>
+        </nav>
+    </header>
     <main>
+        <section id="container-difficult">
+            <div id="difficult" class="difficult-section">
+                <h3>Dificuldade: <span>difícil</span></h3>
+                <ul>
+                    <li id="easy"><button class="easy-btn choose-diffcult">Fácil</button></li>
+                    <li><button class="normal-btn choose-diffcult current-level">Normal</button></li>
+                    <li><button class="hard-btn choose-diffcult">Difícil</button></li>
+                </ul>
+            </div>
+
+        </section>
         <section id="section">
             <h1 id="title">PlanetsCard</h1>
             <button id="btn_start">Start</button>

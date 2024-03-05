@@ -25,6 +25,49 @@
   position: absolute;
   backface-visibility: hidden;
   transition: transform 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 15px;
+}
+
+.cardRight {
+  animation: Accept 1s linear;
+}
+.accept {
+  opacity: 0.5;
+}
+@keyframes Accept {
+  0% {
+    border-top: 2px solid rgb(123, 255, 0);
+    border-right: 1px solid rgba(0, 0, 255, 0);
+    border-bottom: 1px solid rgba(0, 128, 0, 0);
+    border-left: 1px solid rgba(255, 255, 255, 0);
+  
+  }
+  25% {
+    border-top: 1px solid rgba(123, 255, 0, 0);
+    border-right: 2px solid blue;
+    border-bottom: 1px solid rgba(0, 128, 0, 0);
+    border-left: 1px solid rgba(255, 255, 255, 0);
+   
+  }
+  50% {
+    border-top: 1px solid rgba(123, 255, 0, 0);
+    border-bottom: 2px solid rgb(0, 115, 128);
+    border-right: 1px solid rgba(0, 0, 255, 0);
+    border-left: 1px solid rgba(255, 255, 255, 0);
+
+  }
+  75% {
+    border-top: 1px solid rgba(123, 255, 0, 0);
+    border-right: 1px solid rgba(0, 0, 255, 0);
+    border-bottom: 1px solid rgba(0, 128, 0, 0);
+    border-left: 2px solid orange;
+ 
+  }
+  100% {
+    border: 1px solid rgb(38, 128, 0);
+
+  }
 }
 
 .card-front {

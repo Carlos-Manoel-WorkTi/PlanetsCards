@@ -1,179 +1,43 @@
-const planets = [
-  {
-    name: "Mercúrio",
-    image: "../../public/game/CardsIMG/mercurio.png",
-  },
-  {
-    name: "Terra",
-    image:
-      "../../public/game/CardsIMG//terra.png",
-  },
-  {
-    name: "Marte",
-    image:
-      "../../public/game/CardsIMG/marte.png",
-  },
-  {
-    name: "Júpiter",
-    image: "../../public/game/CardsIMG/jpt.png",
-  },
-  {
-    name: "Saturno",
-    image:
-      "../../public/game/CardsIMG/saturno.png",
-  },
-  {
-    name: "Urano",
-    image:
-      "../../public/game/CardsIMG/urano.png",
-  },
-  {
-    name: "Netuno",
-    image:
-      "../../public/game/CardsIMG/netuno.png",
-  },
-  {
-    name: "Plutão",
-    image:
-      "../../public/game/CardsIMG/",
-  },
-  {
-    name: "Ceres",
-    image:
-      "../../public/game/CardsIMG/ceres.png",
-  },
-  {
-    name: "Éris",
-    image:
-      "../../public/game/CardsIMG/eris.png",
-  },
-  {
-    name: "Sol",
-    image:
-      "../../public/game/CardsIMG/sol.png",
-  },
-  {
-    name: "Haumea",
-    image:
-      "../../public/game/CardsIMG/haumea.png",
-  },
-  {
-    name: "Makemake",
-    image:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fplanetas.fandom.com%2Fpt-br%2Fwiki%2FMakemake&psig=AOvVaw2BTxbdyOEbtgqJ-lAxOEiU&ust=1709329569819000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPCioYHD0YQDFQAAAAAdAAAAABAE",
-  },
-  {
-    name: "Gonggong",
-    image: "https://i.ytimg.com/vi/QYkR7r5Xz14/hqdefault.jpg",
-  },
-  {
-    name: "Vênus",
-    image:
-      "https://uploads.metropoles.com/wp-content/uploads/2021/07/26170510/venus-em-virgem-17876.jpg",
-  },
-  {
-    name: "Mercúrio",
-    image: "../../public/game/CardsIMG/mercurio.png",
-  },
-  {
-    name: "Terra",
-    image:
-      "../../public/game/CardsIMG//terra.png",
-  },
-  {
-    name: "Marte",
-    image:
-      "../../public/game/CardsIMG/marte.png",
-  },
-  {
-    name: "Júpiter",
-    image: "../../public/game/CardsIMG/jpt.png",
-  },
-  {
-    name: "Saturno",
-    image:
-      "../../public/game/CardsIMG/saturno.png",
-  },
-  {
-    name: "Urano",
-    image:
-      "../../public/game/CardsIMG/urano.png",
-  },
-  {
-    name: "Netuno",
-    image:
-      "../../public/game/CardsIMG/netuno.png",
-  },
-  {
-    name: "Plutão",
-    image:
-      "../../public/game/CardsIMG/",
-  },
-  {
-    name: "Ceres",
-    image:
-      "../../public/game/CardsIMG/ceres.png",
-  },
-  {
-    name: "Éris",
-    image:
-      "../../public/game/CardsIMG/eris.png",
-  },
-  {
-    name: "Sol",
-    image:
-      "../../public/game/CardsIMG/sol.png",
-  },
-  {
-    name: "Haumea",
-    image:
-      "../../public/game/CardsIMG/haumea.png",
-  },
-  {
-    name: "Makemake",
-    image:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fplanetas.fandom.com%2Fpt-br%2Fwiki%2FMakemake&psig=AOvVaw2BTxbdyOEbtgqJ-lAxOEiU&ust=1709329569819000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPCioYHD0YQDFQAAAAAdAAAAABAE",
-  },
-  {
-    name: "Gonggong",
-    image: "https://i.ytimg.com/vi/QYkR7r5Xz14/hqdefault.jpg",
-  },
-  {
-    name: "Vênus",
-    image:
-      "https://uploads.metropoles.com/wp-content/uploads/2021/07/26170510/venus-em-virgem-17876.jpg",
-  }
-  
-];
+import DATA_CARDS from "./data";
 
-console.log(planets);
+type Planet = {
+  name: string;
+  image: string;
+  id?: string;
+};
+type Compare = {
+  name: string;
+  id: string;
+};
 
-console.log(planets);
+const planets = generateList(DATA_CARDS);
 
-let Corrects: string[] = [];
-const Card = document.getElementsByClassName("card") as HTMLCollection;
+let Corrects: Compare[] = [];
+const btn_restart = document.getElementById("btn_repeat") as HTMLElement;
 const Container_Cards = document.getElementById(
   "container_cards"
 ) as HTMLElement;
 
 // EVENTS
 Container_Cards.addEventListener("click", turnCard);
-window.document.addEventListener("DOMContentLoaded", renderCards);
 
-// console.log(planets);
+window.document.addEventListener("DOMContentLoaded", renderCards);
+btn_restart.addEventListener("click", restart);
 
 class CardClass {
   name: string;
   link_img: string;
+  id: string;
 
-  constructor(name_class: string, img: string) {
+  constructor(name_class: string, img: string, id: string) {
     this.name = name_class;
     this.link_img = img;
+    this.id = id;
   }
 
   public createCard() {
     return `
-      <div class="${this.name} card flipped ">
+      <div id="${this.id}" class="${this.name} card flipped ">
       <div class="card-front" style="background-image: url('${this.link_img}');"></div>
       <div class="card-back"></div>
       </div>
@@ -184,72 +48,139 @@ class CardClass {
 function renderCards() {
   setTimeout(() => {
     planets.map((obj) => {
-      const model_card = new CardClass(obj.name, obj.image);
+      const model_card = new CardClass(obj.name, obj.image, obj.id!);
       const card = model_card.createCard();
       Container_Cards.innerHTML += card;
-      // console.log(new_card);
     });
   }, 1000);
 }
 
 function turnCard(card: Event) {
-  //CHECK IF THERE'S THE FLIP CLASS
-  if (!(card.target as HTMLElement).classList.contains("flipped")) {
-    if (
-      card &&
-      card.target instanceof Element &&
-      card.target.parentNode instanceof Node
-    ) {
-      //  ADD THE FLIP CLASS
-      (card.target.parentNode as HTMLElement).classList.remove("flipped");
+  setTimeout(() => {
+    //CHECK IF THERE'S THE FLIP CLASS
+    if (!(card.target as HTMLElement).classList.contains("flipped")) {
+      if (
+        card &&
+        card.target instanceof Element &&
+        card.target.parentNode instanceof Node
+      ) {
+        //  ADD THE FLIP CLASS
+        (card.target.parentNode as HTMLElement).classList.remove("flipped");
 
-      setTimeout(() => {
-        // ADD IN THE LIST_OF_CARDS
-        if (
-          card &&
-          card.target instanceof Element &&
-          card.target.parentNode instanceof Node
-        ) {
-          Corrects.push((card.target!.parentNode as HTMLElement).classList[0]);
-        }
+        setTimeout(() => {
+          // ADD IN THE LIST_OF_CARDS
+          if (
+            card &&
+            card.target instanceof Element &&
+            card.target.parentNode instanceof Node
+          ) {
+            Corrects.push({
+              name: (card.target!.parentNode as HTMLElement).classList[0],
+              id: (card.target!.parentNode as HTMLElement).id,
+            });
+          }
 
-        //REMOVE THE FLIP CLASS
+          //REMOVE THE FLIP CLASS
 
-        if (Corrects.length >= 2) {
-          //  COMPARE BETWEEN LIST
-          const Accept_card: boolean = compareBetween(Corrects[0], Corrects[1]);
-          // GET THE ELEMENTS CARDS
-          const list_of_cards = Array.from(
-            document.getElementsByClassName("card")
-          );
-          list_of_cards.forEach((element) => {
-            // CHECK IF IT'S OK
-            if (Accept_card) {
-              (
-                document.getElementsByClassName(
-                  `${Corrects[0]}`
-                )[0] as HTMLElement
-              ).classList.add("accept");
-              (
-                document.getElementsByClassName(
-                  `${Corrects[0]}`
-                )[1] as HTMLElement
-              ).classList.add("accept");
-            }
-            // IF IT WAS OK THEN PUT THE CLASS ACCEPT
-            if (!element.classList.contains("accept")) {
-              element.classList.add("flipped");
-            }
-          });
+          if (Corrects.length >= 2) {
+            //  COMPARE BETWEEN LIST
+            const Accept_card: boolean = compareBetween(
+              Corrects[0],
+              Corrects[1]
+            );
+            // GET THE ELEMENTS CARDS
+            const list_of_cards = Array.from(
+              document.getElementsByClassName("card")
+            );
+            list_of_cards.forEach((element) => {
+              // CHECK IF IT'S OK
+              if (Accept_card) {
+                // Salve the current cards
+                const CardOne = document.getElementsByClassName(
+                  `${Corrects[0].name}`
+                )[0] as HTMLElement;
 
-          // Reset the Corrects
-          Corrects = [];
-        }
-      }, 500);
+                const CardSecond = document.getElementsByClassName(
+                  `${Corrects[0].name}`
+                )[1] as HTMLElement;
+                // ADD THE WINNER EFFECT
+                winnerEffect(
+                  CardOne.querySelector(".card-front")!,
+                  CardSecond.querySelector(".card-front")!
+                );
+                setTimeout(() => {
+                  //  ADD THE CLASS ACCEPT
+                  CardOne.classList.add("accept");
+                  CardSecond.classList.add("accept");
+                }, 1000);
+              }
+              // Reset the Corrects
+              Corrects = [];
+              // IF IT WAS OK THEN PUT THE CLASS ACCEPT
+              if (!element.classList.contains("accept")) {
+                element.classList.add("flipped");
+              }
+            });
+          }
+        }, 500);
+      }
     }
-  }
+  }, 100);
 }
 
-function compareBetween(firstOpt: string, secondOpt: string): boolean {
-  return firstOpt === secondOpt;
+function compareBetween(firstOpt: Compare, secondOpt: Compare): boolean {
+  const Step_One = firstOpt.id == secondOpt.id;
+  const Step_Two = firstOpt.name == secondOpt.name;
+  return !Step_One && Step_Two ? true : false;
+}
+function winnerEffect(firstElement: HTMLElement, secondElement: HTMLElement) {
+  firstElement.classList.add("cardRight");
+  secondElement.classList.add("cardRight");
+}
+
+function restart() {
+  const Element = `<div id="menu_restart"><button class="btn_restart" id="cancel_restart">Continuar</button><button class="btn_restart"
+ id="ok_restart">Reiniciar</button></div>`;
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = Element;
+  const Root = document.getElementById("root_game") as HTMLAreaElement;
+  Root.insertBefore(tempDiv.firstChild!, Root.firstChild);
+
+  const Init_Restart = document.getElementById("ok_restart");
+  const cancelButton = document.getElementById("cancel_restart");
+  Init_Restart?.addEventListener("click", () => location.reload());
+  cancelButton?.addEventListener("click", () => {
+    Root.removeChild(tempDiv.firstChild!);
+  });
+}
+
+function generateUniqueID() {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const length = 5;
+  let id = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+
+    id += characters[randomIndex];
+  }
+
+  return id;
+}
+
+function generateList(list: Planet[]): Planet[] {
+  let copyList: Planet[] = list.slice();
+
+  copyList.push(...copyList);
+
+  copyList = copyList.map((x) => {
+    return { name: x.name, image: x.image, id: generateUniqueID() };
+  });
+
+  for (let i = copyList.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copyList[i], copyList[j]] = [copyList[j], copyList[i]];
+  }
+  return copyList;
 }
