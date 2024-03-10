@@ -4,12 +4,12 @@ const ContainerDifficult = document.getElementById(
 const start = document.getElementById("btn_start") as HTMLElement;
 
 function StartGame(): void {
-  if (!localStorage.getItem("difficult")) {
-    alert("Selecione um nivel");
-    return;
+  if(!localStorage.getItem('difficult')) {
+    alert("Selecione um nivel")
+    return
   }
   setTimeout(() => {
-    window.location.href = "../pages/game.html";
+    window.location.href = "../../game.html";
   }, 1000);
 }
 
@@ -27,7 +27,7 @@ function alterDifficult(e: Event): void {
     });
     element.classList.add("current-level");
 
-    salveDifficult(element!.parentElement!.id);
+    salveDifficult(element!.parentElement!.id)
   }
 }
 
