@@ -8,9 +8,9 @@ function StartGame(): void {
     alert("Selecione um nivel")
     return
   }
-  setTimeout(() => {
-    window.location.href = "../../game.html";
-  }, 1000);
+  // setTimeout(() => {
+  //   window.location.href = "../../game.html";
+  // }, 1000);
 }
 
 // EVENTS
