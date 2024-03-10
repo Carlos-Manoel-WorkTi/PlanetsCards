@@ -2,20 +2,20 @@ const ContainerDifficult = document.getElementById(
   "container-difficult"
 ) as HTMLElement;
 const start = document.getElementById("btn_start") as HTMLElement;
+const link_start = document.getElementById('link_start') as HTMLElement
 
-function StartGame(): void {
+function StartGame(e:Event): void {
+
+  
   if(!localStorage.getItem('difficult')) {
     alert("Selecione um nivel")
-    return
+    e.preventDefault()
   }
-  // setTimeout(() => {
-  //   window.location.href = "../../game.html";
-  // }, 1000);
 }
 
 // EVENTS
 ContainerDifficult.addEventListener("click", alterDifficult);
-start.addEventListener("click", StartGame);
+link_start.addEventListener("click", StartGame);
 
 // FUNCTION
 function alterDifficult(e: Event): void {

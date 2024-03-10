@@ -31,7 +31,7 @@
   }
 }
 
-#btn_start {
+#link_start {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.734);
   width: 20%;
@@ -45,6 +45,8 @@
   color: rgb(207, 37, 37);
   border: 0.01em solid transparent;
   animation: border-color-change 4s linear infinite alternate;
+  text-decoration: none;
+  text-align: center;
 }
 
 @keyframes border-color-change {
@@ -72,7 +74,7 @@
   }
 }
 
-#btn_start:hover {
+#link_start:hover {
   color: rgb(112, 6, 6);
   border: 0.01em solid rgb(128, 24, 24);
   transform: scale(1.1);
@@ -82,13 +84,12 @@
   transform: scale(1.1);
 }
 
-
 @media screen and (max-width: 600px) {
   #title {
     font-size: 3.5em;
   }
 
-  #btn_start {
+  #link_start {
     margin-top: 20px;
     padding: 10px;
     width: 40%;
