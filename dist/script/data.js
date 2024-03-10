@@ -14,20 +14,53 @@
 /*!****************************!*\
   !*** ./src/script/data.ts ***!
   \****************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst DATA_CARDS = [\n    {\n        name: \"Mercúrio\",\n        image: \"../../public/game/CardsIMG/mercurio.png\",\n    },\n    {\n        name: \"Terra\",\n        image: \"../../public/game/CardsIMG//terra.png\",\n    },\n    {\n        name: \"Marte\",\n        image: \"../../public/game/CardsIMG/marte.png\",\n    },\n    {\n        name: \"Júpiter\",\n        image: \"../../public/game/CardsIMG/jpt.png\",\n    },\n    {\n        name: \"Saturno\",\n        image: \"../../public/game/CardsIMG/saturno.png\",\n    },\n    {\n        name: \"Urano\",\n        image: \"../../public/game/CardsIMG/urano.png\",\n    },\n    {\n        name: \"Netuno\",\n        image: \"../../public/game/CardsIMG/netuno.png\",\n    },\n    {\n        name: \"Plutão\",\n        image: \"../../public/game/CardsIMG/PLUTAO.png\",\n    },\n    {\n        name: \"Ceres\",\n        image: \"../../public/game/CardsIMG/ceres.png\",\n    },\n    {\n        name: \"Éris\",\n        image: \"../../public/game/CardsIMG/eris.png\",\n    },\n    {\n        name: \"Sol\",\n        image: \"../../public/game/CardsIMG/sol.png\",\n    },\n    {\n        name: \"Haumea\",\n        image: \"../../public/game/CardsIMG/haumea.png\",\n    },\n    {\n        name: \"Makemake\",\n        image: \"../../public/game/CardsIMG/MAKEMAKE.png\",\n    },\n    {\n        name: \"Gonggong\",\n        image: \"../../public/game/CardsIMG/gong.png\",\n    },\n    {\n        name: \"Vênus\",\n        image: \"../../public/game/CardsIMG/venus.png\",\n    },\n];\nexports[\"default\"] = DATA_CARDS;\n\n\n//# sourceURL=webpack://planestgame/./src/script/data.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar DATA_CARDS = [{\n  name: \"Mercúrio\",\n  image: \"../../public/game/CardsIMG/mercurio.png\"\n}, {\n  name: \"Terra\",\n  image: \"../../public/game/CardsIMG//terra.png\"\n}, {\n  name: \"Marte\",\n  image: \"../../public/game/CardsIMG/marte.png\"\n}, {\n  name: \"Júpiter\",\n  image: \"../../public/game/CardsIMG/jpt.png\"\n}, {\n  name: \"Saturno\",\n  image: \"../../public/game/CardsIMG/saturno.png\"\n}, {\n  name: \"Urano\",\n  image: \"../../public/game/CardsIMG/urano.png\"\n}, {\n  name: \"Netuno\",\n  image: \"../../public/game/CardsIMG/netuno.png\"\n}, {\n  name: \"Plutão\",\n  image: \"../../public/game/CardsIMG/PLUTAO.png\"\n}, {\n  name: \"Ceres\",\n  image: \"../../public/game/CardsIMG/ceres.png\"\n}, {\n  name: \"Éris\",\n  image: \"../../public/game/CardsIMG/eris.png\"\n}, {\n  name: \"Sol\",\n  image: \"../../public/game/CardsIMG/sol.png\"\n}, {\n  name: \"Haumea\",\n  image: \"../../public/game/CardsIMG/haumea.png\"\n}, {\n  name: \"Makemake\",\n  image: \"../../public/game/CardsIMG/MAKEMAKE.png\"\n}, {\n  name: \"Gonggong\",\n  image: \"../../public/game/CardsIMG/gong.png\"\n}, {\n  name: \"Vênus\",\n  image: \"../../public/game/CardsIMG/venus.png\"\n}];\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DATA_CARDS);\n\n//# sourceURL=webpack://planestgame/./src/script/data.ts?");
 
 /***/ })
 
 /******/ 	});
+/************************************************************************/
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/script/data.ts"](0, __webpack_exports__);
+/******/ 	__webpack_modules__["./src/script/data.ts"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

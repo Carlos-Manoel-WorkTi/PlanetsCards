@@ -1,6 +1,8 @@
 #root_game {
   width: 100vw;
+  max-width: 100vw;
   height: 100vh;
+  max-height: 100vh;
   background-image: url("../../../public/game/starry-sky-2675322_1920.jpg");
   background-size: cover;
   overflow: hidden;
@@ -9,13 +11,12 @@
   margin: 0;
   box-sizing: border-box;
   position: relative;
-  box-shadow: inset 0 0 0 5px rgba(2, 2, 2, 0.63);
 }
-
 
 #main {
   height: 600px;
   width: 100%;
+  max-width: 100vw;
   padding-top: 20px;
   display: flex;
   justify-content: center;
@@ -110,7 +111,7 @@
 #menu_restart {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.805);
   display: flex;
