@@ -1,5 +1,8 @@
 import DATA_CARDS from "./data";
 import clock from "./clock";
+import ActiveMenu from "./menu";
+import CardClass from "./cards";
+import generateList from "./generateList";
 
 clock.createClock();
 clock.start();
@@ -18,50 +21,72 @@ const planets = generateList(DATA_CARDS);
 
 let Corrects: Compare[] = [];
 const btn_restart = document.getElementById("btn_repeat") as HTMLElement;
-const Container_Cards = document.getElementById(
-  "container_cards"
+const btn_menu = document.getElementById("menu") as HTMLElement;
+const Container_Cards_hard = document.getElementById(
+  "container_cards_hard"
 ) as HTMLElement;
+const Container_Cards_easy = document.getElementById(
+  "container_cards_easy"
+) as HTMLElement;
+const Main = document.querySelector("#main") as HTMLElement;
 
 // EVENTS
-Container_Cards.addEventListener("click", turnCard);
+btn_menu.addEventListener("click", (event) => ActiveMenu(event, clock));
+Container_Cards_easy?.addEventListener("click", turnCard);
+Container_Cards_hard?.addEventListener("click", turnCard);
 
 window.document.addEventListener("DOMContentLoaded", renderCards);
 btn_restart.addEventListener("click", restart);
 
-class CardClass {
-  name: string;
-  link_img: string;
-  id: string;
-
-  constructor(name_class: string, img: string, id: string) {
-    this.name = name_class;
-    this.link_img = img;
-    this.id = id;
-  }
-
-  public createCard() {
-    return `
-      <div id="${this.id}" class="${this.name} card flipped ">
-      <div class="card-front" style="background-image: url('${this.link_img}');"></div>
-      <div class="card-back"></div>
-      </div>
-    `;
-  }
-}
-
 function renderCards() {
+  const level = localStorage.getItem("difficult");
+
+  checkDifficult(level!);
+
   setTimeout(() => {
     planets.map((obj) => {
-      const model_card = new CardClass(obj.name, obj.image, obj.id!);
+      const model_card = new CardClass(obj.name, obj.image, obj.id!, level!);
       const card = model_card.createCard();
-      Container_Cards.innerHTML += card;
+
+      if (level == "easy") {
+        (
+          document.getElementById("container_cards_easy") as HTMLElement
+        ).innerHTML += card;
+        (
+          document.getElementById("container_cards_easy") as HTMLElement
+        ).addEventListener("click", turnCard);
+      }
+      if (level == "hard") {
+        (
+          document.getElementById("container_cards_hard") as HTMLElement
+        ).innerHTML += card;
+        (
+          document.getElementById("container_cards_hard") as HTMLElement
+        ).addEventListener("click", turnCard);
+      }
     });
   }, 1000);
 }
 
+function checkDifficult(level: string) {
+  const container = document.querySelector(".container") as HTMLElement;
+
+  if (level == "easy") {
+    container.id = "container_cards_easy";
+  }
+  if (level == "hard") {
+    container.id = "container_cards_hard";
+  }
+}
 function turnCard(card: Event) {
   // BUG
-  if (Corrects && (card.target as HTMLElement).id == "container_cards") return;
+  if (
+    Corrects &&
+    ((card.target as HTMLElement).id == "container_cards_hard" ||
+      (card.target as HTMLElement).id == "container_cards_easy")
+  )
+    return;
+
 
   setTimeout(() => {
     //CHECK IF THERE'S THE FLIP CLASS
@@ -73,7 +98,7 @@ function turnCard(card: Event) {
       ) {
         //  ADD THE FLIP CLASS
         (card.target.parentNode as HTMLElement).classList.remove("flipped");
-
+        
         setTimeout(() => {
           // ADD IN THE LIST_OF_CARDS
           if (
@@ -102,10 +127,10 @@ function turnCard(card: Event) {
             );
 
             // GET THE ELEMENTS CARDS
-            const list_of_cards = Array.from(
+            const list_of_cards_hard = Array.from(
               document.getElementsByClassName("card")
             );
-            list_of_cards.forEach((element) => {
+            list_of_cards_hard.forEach((element) => {
               // CHECK IF IT'S OK
               if (Accept_card) {
                 // Salve the current cards
@@ -121,7 +146,7 @@ function turnCard(card: Event) {
                   CardOne.querySelector(".card-front")!,
                   CardSecond.querySelector(".card-front")!
                 );
-                checkWins()
+                checkWins();
                 setTimeout(() => {
                   //  ADD THE CLASS ACCEPT
                   CardOne.classList.add("accept");
@@ -131,23 +156,17 @@ function turnCard(card: Event) {
 
               // Reset the Corrects
               Corrects = [];
-             
-              
-            
+
               // IF IT WAS OK THEN PUT THE CLASS ACCEPT
               if (!element.classList.contains("accept")) {
                 element.classList.add("flipped");
               }
-              
             });
-           
-           
           }
         }, 500);
       }
     }
   }, 100);
-  
 }
 
 function compareBetween(firstOpt: Compare, secondOpt: Compare): boolean {
@@ -157,7 +176,6 @@ function compareBetween(firstOpt: Compare, secondOpt: Compare): boolean {
 }
 function checkWins() {
   const list_cards_turned = document.querySelectorAll(".accept");
-  console.log(list_cards_turned);
 
   if (list_cards_turned.length > 1) {
     alert("great");
@@ -181,42 +199,9 @@ function restart() {
   const cancelButton = document.getElementById("cancel_restart");
   Init_Restart?.addEventListener("click", () => location.reload());
   cancelButton?.addEventListener("click", () => {
-    console.log(tempDiv.firstChild);
-
     document.getElementById("menu_restart")?.remove();
     clock.start();
   });
-}
-
-function generateUniqueID() {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const length = 5;
-  let id = "";
-
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-
-    id += characters[randomIndex];
-  }
-
-  return id;
-}
-
-function generateList(list: Planet[]): Planet[] {
-  let copyList: Planet[] = list.slice();
-
-  copyList.push(...copyList);
-
-  copyList = copyList.map((x) => {
-    return { name: x.name, image: x.image, id: generateUniqueID() };
-  });
-
-  for (let i = copyList.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copyList[i], copyList[j]] = [copyList[j], copyList[i]];
-  }
-  return copyList;
 }
 
 const efeitos = [
@@ -243,7 +228,7 @@ const efeitos = [
 function criarNave(id: string, img: string): HTMLImageElement {
   const nave = document.createElement("img");
   nave.setAttribute("src", img);
-  nave.id = `${id}`; 
+  nave.id = `${id}`;
   return nave;
 }
 

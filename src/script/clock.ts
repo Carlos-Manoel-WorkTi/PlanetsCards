@@ -27,7 +27,7 @@ class CLOCK {
   start(): void {
     this.time = this.current_time;
     this.pause = false
-    console.log(this.current_time);
+   
 
     if (!this.pause) {
       this.intervalId = setInterval(() => {
