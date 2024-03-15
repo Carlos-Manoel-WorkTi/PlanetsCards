@@ -87,10 +87,12 @@ function turnCard(card: Event) {
   )
     return;
 
-
   setTimeout(() => {
     //CHECK IF THERE'S THE FLIP CLASS
-    if (!(card.target as HTMLElement).classList.contains("flipped")) {
+    if (
+      !(card.target as HTMLElement).classList.contains("flipped") &&
+      !(card.target as HTMLElement).parentElement!.classList.contains("accept")
+    ) {
       if (
         card &&
         card.target instanceof Element &&
@@ -98,7 +100,7 @@ function turnCard(card: Event) {
       ) {
         //  ADD THE FLIP CLASS
         (card.target.parentNode as HTMLElement).classList.remove("flipped");
-        
+
         setTimeout(() => {
           // ADD IN THE LIST_OF_CARDS
           if (
@@ -106,6 +108,8 @@ function turnCard(card: Event) {
             card.target instanceof Element &&
             card.target.parentNode instanceof Node
           ) {
+            if (card.target.classList.contains("accept"))
+              console.log(card.target);
             Corrects.push({
               name: (card.target!.parentNode as HTMLElement).classList[0],
               id: (card.target!.parentNode as HTMLElement).id,
@@ -130,37 +134,39 @@ function turnCard(card: Event) {
             const list_of_cards_hard = Array.from(
               document.getElementsByClassName("card")
             );
+            // CHECK IF IT'S OK
+            if (Accept_card) {
+              // Salve the current cards
+              const CardOne = document.getElementsByClassName(
+                `${Corrects[0].name}`
+              )[0] as HTMLElement;
+
+              const CardSecond = document.getElementsByClassName(
+                `${Corrects[1].name}`
+              )[1] as HTMLElement;
+
+              // ADD THE WINNER EFFECT
+              winnerEffect(
+                CardOne.querySelector(".card-front")!,
+                CardSecond.querySelector(".card-front")!
+              );
+              const list_cards_turned = document.querySelectorAll(".accept");
+              checkWins(list_cards_turned);
+
+              //  ADD THE CLASS ACCEPT
+              CardOne.classList.add("accept");
+              CardSecond.classList.add("accept");
+            }
             list_of_cards_hard.forEach((element) => {
-              // CHECK IF IT'S OK
-              if (Accept_card) {
-                // Salve the current cards
-                const CardOne = document.getElementsByClassName(
-                  `${Corrects[0].name}`
-                )[0] as HTMLElement;
-
-                const CardSecond = document.getElementsByClassName(
-                  `${Corrects[0].name}`
-                )[1] as HTMLElement;
-                // ADD THE WINNER EFFECT
-                winnerEffect(
-                  CardOne.querySelector(".card-front")!,
-                  CardSecond.querySelector(".card-front")!
-                );
-                checkWins();
-                setTimeout(() => {
-                  //  ADD THE CLASS ACCEPT
-                  CardOne.classList.add("accept");
-                  CardSecond.classList.add("accept");
-                }, 1000);
-              }
-
-              // Reset the Corrects
-              Corrects = [];
-
+              let ok: boolean = false;
               // IF IT WAS OK THEN PUT THE CLASS ACCEPT
               if (!element.classList.contains("accept")) {
                 element.classList.add("flipped");
-              }
+              } 
+              console.log(ok);
+
+              // Reset the Corrects
+              Corrects = [];
             });
           }
         }, 500);
@@ -174,10 +180,8 @@ function compareBetween(firstOpt: Compare, secondOpt: Compare): boolean {
   const Step_Two = firstOpt.name == secondOpt.name;
   return !Step_One && Step_Two ? true : false;
 }
-function checkWins() {
-  const list_cards_turned = document.querySelectorAll(".accept");
-
-  if (list_cards_turned.length > 1) {
+function checkWins(list_cards_turned) {
+  if (list_cards_turned.length > 0) {
     alert("great");
   }
 }

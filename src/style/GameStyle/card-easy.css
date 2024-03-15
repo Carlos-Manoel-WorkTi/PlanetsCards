@@ -8,12 +8,13 @@
   flex-wrap: wrap;
   align-self: start;
   background-color: rgba(0, 0, 0, 0.886);
+  border-radius: 4%;
   z-index: 3;
 }
 
 .card-easy {
   width: 120px;
-  height: 130px;
+  height: 135px;
   position: relative;
   perspective: 1000px;
   z-index: 6;
@@ -25,11 +26,22 @@
     height: 115px;
   }
   #container_cards_easy {
-    height: 60vh;
+    height: 70vh;
     width: 565px;
     column-gap: 20px;
     padding: 15px;
     background-color: rgb(0 0 0 / 67%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #container_cards_easy {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.461) 90%,
+      transparent
+    );
+    align-items: center;
   }
 }
 @media screen and (max-width: 500px) {
@@ -38,7 +50,7 @@
     height: 90px;
   }
   #container_cards_easy {
-    height: 90vh;
+    height: 65vh;
     width: 565px;
     column-gap: 20px;
     padding: 15px;
