@@ -1,0 +1,20 @@
+#container_cards_normal {
+  width: 700px;
+  min-height: 80%;
+  display: flex;
+  justify-content: space-around;
+  column-gap: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
+  align-self: start;
+  background-color: rgba(0, 0, 0, 0.886);
+  border-radius: 4%;
+  z-index: 3;
+}
+.card-normal {
+  width: 95px;
+  height: 100px;
+  position: relative;
+  perspective: 1000px;
+  z-index: 6;
+}

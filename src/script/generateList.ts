@@ -27,7 +27,9 @@ export default function generateList(list: Planet[]): Planet[] {
   if (level == "easy") {
     copyList.push(...list.slice(0, 6));
   }
-
+  if (level == "normal") {
+    copyList.push(...list.slice(0,10));
+  }
   if (level == "hard") {
     copyList.push(...list.slice());
   }

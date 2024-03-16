@@ -19,10 +19,10 @@ export default class CardClass {
         </div>
       `;
     const cardNormal = `
-      <div id="${this.id}" class="${this.name} card card-hard flipped ">
-      <div class="card-front" style="background-image: url('${this.link_img}');"></div>
-      <div class="card-back"></div>
-      </div>
+        <div id="${this.id}"  class=" ${this.name} card card-normal flipped ">
+            <div class="card-front" style="background-image: url('${this.link_img}');"></div>
+            <div class="card-back"></div>
+        </div>
     `;
     const cardEasy = `<div id="${this.id}"  class="${this.name} card card-easy flipped ">
                           <div class="card-front" style="background-image: url('${this.link_img}');"></div>

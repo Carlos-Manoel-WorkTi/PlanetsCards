@@ -38,13 +38,14 @@ class CLOCK {
   }
 
   // Método para pausar o cronômetro
-  pauseTimer(): void {
+  pauseTimer():Number {
     this.current_time = this.time;
     if (this.intervalId) {
       clearInterval(this.intervalId);
       this.intervalId = null;
       this.pause = true;
     }
+    return this.current_time 
   }
 
   // Método para parar o cronômetro

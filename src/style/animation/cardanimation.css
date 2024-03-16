@@ -74,10 +74,16 @@
 .card-hard.flipped .card-front {
   transform: rotateY(-180deg);
 }
+.card-normal.flipped .card-front {
+  transform: rotateY(-180deg);
+}
 .card-easy.flipped .card-front {
   transform: rotateY(-180deg);
 }
 .card-hard.flipped .card-back {
+  transform: rotateY(0deg);
+}
+.card-normal.flipped .card-back {
   transform: rotateY(0deg);
 }
 .card-easy.flipped .card-back {
