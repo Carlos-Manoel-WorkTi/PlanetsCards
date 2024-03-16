@@ -6,7 +6,6 @@ import generateList from "./generateList";
 import turnCard from "./turnCard";
 import restart from "./restart";
 
-
 clock.createClock();
 clock.start();
 
@@ -43,7 +42,7 @@ Container_Cards_normal?.addEventListener("click", turnCard);
 Container_Cards_hard?.addEventListener("click", turnCard);
 
 window.document.addEventListener("DOMContentLoaded", renderCards);
-btn_restart.addEventListener("click", x => restart(clock));
+btn_restart.addEventListener("click", (x) => restart(clock));
 
 function renderCards() {
   const level = localStorage.getItem("difficult");
@@ -97,30 +96,24 @@ function checkDifficult(level: string) {
   }
 }
 
-
-
-
-
-
-
 const efeitos = [
   {
     id: "nave-space-1",
     delay: 2000,
     time: 3000,
-    link_img: "/public/game/nave.png",
+    link_img: "./public/game/nave.png",
   },
   {
     id: "nave-space-2",
     delay: 7000,
     time: 7000,
-    link_img: "/public/game/nave.png",
+    link_img: "./public/game/nave.png",
   },
   {
     id: "alien",
     delay: 13000,
     time: 12000,
-    link_img: "/public/game/alien.png",
+    link_img: "./public/game/alien.png",
   },
 ];
 
