@@ -108,19 +108,19 @@ const efeitos = [
     id: "nave-space-1",
     delay: 2000,
     time: 3000,
-    link_img: "../../public/game/nave.png",
+    link_img: "./../../public/game/nave.png",
   },
   {
     id: "nave-space-2",
     delay: 7000,
     time: 7000,
-    link_img: "../../public/game/nave.png",
+    link_img: "./../../public/game/nave.png",
   },
   {
     id: "alien",
     delay: 13000,
     time: 12000,
-    link_img: "../../public/game/alien.png",
+    link_img: "./../../public/game/alien.png",
   },
 ];
 
