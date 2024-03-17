@@ -33,14 +33,15 @@ const Container_Cards_easy = document.getElementById(
   "container_cards_easy"
 ) as HTMLElement;
 
-
 // EVENTS
+window.document.addEventListener("DOMContentLoaded", () => {
+  renderCards();
+  alter_show_difficult();
+});
 btn_menu.addEventListener("click", (event) => ActiveMenu(event, clock));
 Container_Cards_easy?.addEventListener("click", turnCard);
 Container_Cards_normal?.addEventListener("click", turnCard);
 Container_Cards_hard?.addEventListener("click", turnCard);
-
-window.document.addEventListener("DOMContentLoaded", renderCards);
 btn_restart.addEventListener("click", (x) => restart(clock));
 
 function renderCards() {
@@ -145,3 +146,27 @@ function efeitoAleatorio() {
 efeitoAleatorio();
 
 setInterval(efeitoAleatorio, 30000);
+
+function alter_show_difficult() {
+  const dif = localStorage.getItem("difficult");
+  const element = document.getElementById("shower_difficult");
+  if (dif) {
+    element.innerText = dif.charAt(0).toUpperCase() + dif.slice(1);
+    switch (dif.toLowerCase()) {
+      case "hard":
+        element.style.color = "#9c0404";
+        break;
+      case "normal":
+        element.style.color = "#4270be";
+        break;
+      case "easy":
+        element.style.color = "green";
+        break;
+      default:
+        // Defina uma cor padrão aqui, se desejar
+        element.style.color = "black";
+    }
+  } else {
+    element.innerText = "";
+  }
+}
