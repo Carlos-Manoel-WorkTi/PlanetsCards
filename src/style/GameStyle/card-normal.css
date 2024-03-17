@@ -1,6 +1,6 @@
 #container_cards_normal {
-  width: 700px;
-  min-height: 80%;
+  width: 600px;
+  min-height: 500px;
   display: flex;
   justify-content: space-around;
   column-gap: 30px;
@@ -17,4 +17,17 @@
   position: relative;
   perspective: 1000px;
   z-index: 6;
+}
+
+@media screen and (max-width: 700px) {
+  #container_cards_normal {
+    width: 500px;
+    column-gap: 17px;
+    padding: 20px;
+    min-height: 450px;
+  }
+  .card-normal {
+    width: 85px;
+    height: 90px;
+  }
 }
