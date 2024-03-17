@@ -86,24 +86,24 @@
 
 @keyframes wave-green {
   0% {
-    color: rgba(0, 255, 0, 0.3); /* Cor verde clara */
+    color: rgba(0, 255, 0, 0.3);
   }
   50% {
-    color: rgb(12, 209, 97); /* Cor verde mais forte */
+    color: rgb(12, 209, 97);
   }
   100% {
-    color: rgba(0, 255, 0, 0.3); /* Cor verde clara */
+    color: rgba(0, 255, 0, 0.3);
   }
 }
-@keyframes wave-blue {
+@keyframes wave-purple {
   0% {
-    color: rgba(42, 132, 217, 0.3); /* Cor verde clara */
+    color: rgba(55, 25, 125, 0.429);
   }
   50% {
-    color: rgb(10, 97, 203); /* Cor verde mais forte */
+    color: rgb(113, 66, 222);
   }
   100% {
-    color: rgba(42, 132, 217, 0.3); /* Cor verde clara */
+    color: rgba(60, 27, 139, 0.501);
   }
 }
 
@@ -115,17 +115,21 @@
   padding: 10px 20px;
   cursor: pointer;
   position: relative;
+  border: 1px solid green;
   font-weight: bold;
   font-size: 20px;
   animation: wave-green 5s infinite;
+  border-radius: 10px;
 }
 #login-up {
   padding: 10px 20px;
   cursor: pointer;
   position: relative;
+  border: 1px solid rgb(93, 49, 195);
   font-weight: bold;
   font-size: 20px;
-  animation: wave-blue 5s infinite;
+  animation: wave-purple 5s infinite;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 992px) {

@@ -101,6 +101,8 @@ html {
 #container_menu ul {
   list-style: none;
   margin-top: -20px;
+  padding: 0;
+  margin-left: -23px;
   text-align: center;
 }
 #container_menu ul li {
@@ -165,8 +167,6 @@ html {
 #cancel_restart {
   background-color: green;
 }
-
-
 
 @media screen and (max-width: 600px) {
   #container_time {
