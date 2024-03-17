@@ -1,0 +1,225 @@
+#container_perfil {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.829);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 12;
+}
+#bloco_perfil {
+  width: 70%;
+  height: 60vh;
+  background-color: rgb(17, 17, 17);
+  display: flex;
+  border-radius: 5px;
+  padding: 1px;
+  flex-direction: column;
+}
+#row_first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 70px;
+  border-bottom: 1px solid white;
+}
+.user_perfil {
+  display: flex;
+  width: 30%;
+  height: auto;
+  align-items: end;
+}
+.user_name_perfil {
+  font-size: 1.5em;
+  line-height: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+.level_perfil {
+  color: rgb(231, 231, 231);
+  width: 80%;
+  margin-bottom: 5px;
+  margin-top: -5px;
+}
+#row_second {
+  height: 300px;
+  background-color: rgb(29, 27, 27);
+}
+
+#bloco_level {
+  width: 40%;
+  height: 50px;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+th,
+td {
+  /* border: 1px solid #ffffffaf; */
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #1b3b7b;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #353638;
+}
+
+tr:hover {
+  background-color: #46494b;
+}
+
+span {
+  color: #d0c9c9e6;
+}
+
+.xp {
+  color: rgb(45, 231, 157);
+}
+
+#logo_perfil {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3em;
+  z-index: 1;
+  color: white;
+  animation: floatAndBlink 8s linear infinite;
+}
+
+.close-button {
+  width: 20px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.close-button::before,
+.close-button::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #ffffff;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.close-button::before {
+  transform: rotate(45deg);
+}
+
+.close-button::after {
+  transform: rotate(-45deg);
+}
+
+/* Estilo de hover para o botão de fechar */
+.close-button:hover::before,
+.close-button:hover::after {
+  background-color: #ff0000;
+}
+#logo_and_close {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.progress-container {
+  width: 80%;
+  margin: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 30%; /* Define o progresso para 30% */
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+@media screen and (max-width: 860px) {
+  #logo_perfil {
+    font-size: 2em;
+  }
+  .user_perfil {
+    width: 40%;
+  }
+  .user_name_perfil {
+    font-size: 1.2em;
+  }
+  .number {
+    font-size: 0.8em;
+    margin-top: -10px;
+  }
+  .level_perfil {
+    width: 80%;
+    margin-bottom: 5px;
+    margin-top: -5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #logo_perfil {
+    font-size: 2em;
+  }
+  .user_perfil {
+    width: 40%;
+  }
+  .user_name_perfil {
+    font-size: 1em;
+  }
+  .number {
+    font-size: 0.8em;
+    margin-top: -10px;
+  }
+  .level_perfil {
+    width: 80%;
+    margin-bottom: 5px;
+    margin-top: -10px;
+  }
+  #bloco_perfil {
+    width: 95%;
+    height: 60vh;
+  }
+  .user_img {
+    min-width: 50px;
+    height: 50px;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #logo_perfil {
+    display: none;
+  }
+  .user_perfil {
+    width: 90%;
+  }
+  #logo_and_close {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

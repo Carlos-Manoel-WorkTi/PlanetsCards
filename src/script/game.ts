@@ -21,7 +21,6 @@ type Compare = {
 
 const planets = generateList(DATA_CARDS);
 
-let Corrects: Compare[] = [];
 const btn_restart = document.getElementById("btn_repeat") as HTMLElement;
 const btn_menu = document.getElementById("menu") as HTMLElement;
 const Container_Cards_hard = document.getElementById(
@@ -33,7 +32,7 @@ const Container_Cards_normal = document.getElementById(
 const Container_Cards_easy = document.getElementById(
   "container_cards_easy"
 ) as HTMLElement;
-const Main = document.querySelector("#main") as HTMLElement;
+
 
 // EVENTS
 btn_menu.addEventListener("click", (event) => ActiveMenu(event, clock));

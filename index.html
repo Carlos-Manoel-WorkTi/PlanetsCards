@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./dist/script/start.js" defer></script>
-    <script src="./src/routes/routes.js" defer></script>
     <link rel="stylesheet" href="./src/style/index.css">
     <link rel="stylesheet" href="./src/style/animation/animation.css">
-
+    <link rel="stylesheet" href="./src/style/perfil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
@@ -18,25 +17,37 @@
 
 <body id="root">
     <header id="header">
-        <div id="user">
-            <img src="https://source.unsplash.com/random" alt="" id="user_img">
-            <div id="user_inf">
-                <div id="user_name">carlos</div>
-                <div id="level">
-                    <span id="number">01</span>
-                    <div id="barra">
-                        <div id="block_one"></div>
-                        <div id="block_two"></div>
+        <div  class="user">
+            <img src="https://source.unsplash.com/random" alt="" class="user_img">
+            <!-- <div class="user_inf">
+                <div class="user_name">carlos</div>
+                <div class="level">
+                    <span class="number">01</span>
+                    <div class="barra">
+                        <div class="block_one"></div>
+                        <div class="block_two"></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <div class="user_inf">
+                <div class="user_name_perfil">carlos</div>
+                <div class="level_perfil">
+                  <span class="number">lv. 10</span>
+                  <div class="progress-container">
+                    <div class="progress-bar">
+                      <div class="progress"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
         <nav id="nav">
-            <span>Entrar</span>
-            <span>Cadastrar</span>
+            <span id="login-in">Entrar</span>
+            <span id="login-up">Cadastrar</span>
         </nav>
     </header>
     <main>
+        <!---->
         <section id="container-difficult">
             <div id="difficult" class="difficult-section">
                 <h3>Dificuldade: <span>difícil</span></h3>
@@ -55,7 +66,7 @@
         <div id="containerVideo">
             <div class="overlay"></div>
             <video id="backgroundVideo" autoplay muted loop>
-                <source src="./public/173500 (720p).mp4" type="video/mp4">
+                <source src="./public/vdbg.mp4" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
             </video>
         </div>

@@ -1,15 +1,21 @@
+import HandlePerfil from "./perfil";
+
+
 const ContainerDifficult = document.getElementById(
   "container-difficult"
 ) as HTMLElement;
 const start = document.getElementById("btn_start") as HTMLElement;
-const link_start = document.getElementById('link_start') as HTMLElement
+const link_start = document.getElementById("link_start") as HTMLElement;
+const perfil = document.querySelector('.user') as HTMLElement;
 
-function StartGame(e:Event): void {
+// EVENTS
+perfil.addEventListener("click",HandlePerfil);
 
-  
-  if(!localStorage.getItem('difficult')) {
-    alert("Selecione um nivel")
-    e.preventDefault()
+
+function StartGame(e: Event): void {
+  if (!localStorage.getItem("difficult")) {
+    alert("Selecione um nivel");
+    e.preventDefault();
   }
 }
 
@@ -27,7 +33,7 @@ function alterDifficult(e: Event): void {
     });
     element.classList.add("current-level");
 
-    salveDifficult(element!.parentElement!.id)
+    salveDifficult(element!.parentElement!.id);
   }
 }
 
