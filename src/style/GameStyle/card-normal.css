@@ -13,7 +13,7 @@
 }
 .card-normal {
   width: 95px;
-  height: 100px;
+  height: 105px;
   position: relative;
   perspective: 1000px;
   z-index: 6;
@@ -24,10 +24,66 @@
     width: 500px;
     column-gap: 17px;
     padding: 20px;
+    height: 70vh;
     min-height: 450px;
   }
   .card-normal {
-    width: 85px;
-    height: 90px;
+    width: 80px;
+    height: 95px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  #container_cards_normal {
+    width: 500px;
+    column-gap: 17px;
+    padding: 20px;
+    height: 70vh;
+    min-height: 450px;
+  }
+  .card-normal {
+    width: 70px;
+    height: 85px;
+  }
+}
+@media screen and (max-width: 370px) {
+  #container_cards_normal {
+    width: 500px;
+    column-gap: 16px;
+    padding: 20px;
+    height: 70vh;
+    min-height: 450px;
+  }
+  .card-normal {
+    width: 60px;
+    height: 65px;
+  }
+}
+@media screen and (max-width: 330px) {
+  #container_cards_normal {
+    width: 500px;
+    column-gap: 16px;
+    padding: 20px;
+    height: 70vh;
+    min-height: 420px;
+    max-height: 390px;
+  }
+  .card-normal {
+    width: 54px;
+    height: 58px;
+  }
+}
+@media screen and (max-width: 305px) {
+  #container_cards_normal {
+    width: 500px;
+    column-gap: 16px;
+    padding: 20px;
+    height: 70vh;
+    min-height: 420px;
+    max-height: 390px;
+  }
+  .card-normal {
+    width: 48px;
+    height: 52px;
   }
 }
