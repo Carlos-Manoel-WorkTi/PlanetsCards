@@ -1,16 +1,20 @@
-import HandlePerfil from "./perfil";
+import { HandlePerfil, generateUser } from "./perfil";
 import configInf from "./configInf";
+
+document.addEventListener("DOMContentLoaded", () => {
+  CheckDifficult();
+  generateUser();
+});
 
 const ContainerDifficult = document.getElementById(
   "container-difficult"
 ) as HTMLElement;
 
 const link_start = document.getElementById("link_start") as HTMLElement;
-const perfil = document.querySelector(".user") as HTMLElement;
-const btn_config = document.getElementById('config_svg')
+
+const btn_config = document.getElementById("config_svg");
 
 // EVENTS
-perfil.addEventListener("click", HandlePerfil);
 
 function StartGame(e: Event): void {
   if (!localStorage.getItem("difficult")) {
@@ -20,10 +24,10 @@ function StartGame(e: Event): void {
 }
 
 // EVENTS
-document.addEventListener("DOMContentLoaded", () => CheckDifficult());
+
 ContainerDifficult.addEventListener("click", alterDifficult);
 link_start.addEventListener("click", StartGame);
-btn_config?.addEventListener('click',configInf)
+btn_config?.addEventListener("click", configInf);
 
 // FUNCTION
 function alterDifficult(e: Event): void {
@@ -37,9 +41,10 @@ function alterDifficult(e: Event): void {
 
     element.classList.add("current-level");
     localStorage.setItem("difficult", element!.parentElement!.id);
-    show_dif!.innerText = element!.parentElement!.id.charAt(0).toUpperCase() + element!.parentElement!.id.slice(1);
+    show_dif!.innerText =
+      element!.parentElement!.id.charAt(0).toUpperCase() +
+      element!.parentElement!.id.slice(1);
 
-    
     switch (show_dif.innerText) {
       case "Hard":
         show_dif.style.color = "#9c0404";
