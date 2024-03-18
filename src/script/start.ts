@@ -1,11 +1,13 @@
 import HandlePerfil from "./perfil";
+import configInf from "./configInf";
 
 const ContainerDifficult = document.getElementById(
   "container-difficult"
 ) as HTMLElement;
-const start = document.getElementById("btn_start") as HTMLElement;
+
 const link_start = document.getElementById("link_start") as HTMLElement;
 const perfil = document.querySelector(".user") as HTMLElement;
+const btn_config = document.getElementById('config_svg')
 
 // EVENTS
 perfil.addEventListener("click", HandlePerfil);
@@ -18,14 +20,15 @@ function StartGame(e: Event): void {
 }
 
 // EVENTS
+document.addEventListener("DOMContentLoaded", () => CheckDifficult());
 ContainerDifficult.addEventListener("click", alterDifficult);
 link_start.addEventListener("click", StartGame);
-document.addEventListener("DOMContentLoaded", () => CheckDifficult());
+btn_config?.addEventListener('click',configInf)
 
 // FUNCTION
 function alterDifficult(e: Event): void {
   const element = e.target! as HTMLElement;
-  const show_dif = document.getElementById("show_difficult");
+  const show_dif = document.getElementById("show_difficult")!;
 
   if (element.classList.contains("choose-difficult")) {
     document.querySelectorAll(".choose-difficult").forEach((x) => {
@@ -34,7 +37,23 @@ function alterDifficult(e: Event): void {
 
     element.classList.add("current-level");
     localStorage.setItem("difficult", element!.parentElement!.id);
-    show_dif!.innerText = element!.parentElement!.id;
+    show_dif!.innerText = element!.parentElement!.id.charAt(0).toUpperCase() + element!.parentElement!.id.slice(1);
+
+    
+    switch (show_dif.innerText) {
+      case "Hard":
+        show_dif.style.color = "#9c0404";
+        break;
+      case "Normal":
+        show_dif.style.color = "#4270be";
+        break;
+      case "Easy":
+        show_dif.style.color = "green";
+        break;
+      default:
+        // Defina uma cor padrão aqui, se desejar
+        show_dif.style.color = "";
+    }
   }
 }
 

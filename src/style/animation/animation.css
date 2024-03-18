@@ -132,6 +132,72 @@
   border-radius: 10px;
 }
 
+@keyframes RotateConfigIn {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+.config_effect_In {
+  animation: RotateConfigIn 1s linear forwards;
+}
+@keyframes RotateConfigUp {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.config_effect_Up {
+  animation: RotateConfigUp 1s linear forwards;
+}
+@keyframes ConfigEnterIn {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  70% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.config_Enter_In {
+  animation: ConfigEnterIn 1s linear forwards;
+}
+@keyframes ConfigEnterOut {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(30%);
+  }
+  70% {
+    transform: translateX(80%);
+  }
+  100% {
+    transform: translateX(220%);
+    display: none;
+  }
+}
+
+.config_Enter_Out {
+  animation: ConfigEnterOut 1s linear forwards;
+}
 @media screen and (max-width: 992px) {
   #link_start {
     padding: 5px;

@@ -46,7 +46,7 @@
   margin-top: -5px;
 }
 #row_second {
-  height: 300px;
+  height: 100%;
   background-color: rgb(29, 27, 27);
 }
 
@@ -201,7 +201,7 @@ span {
   }
   #bloco_perfil {
     width: 95%;
-    height: auto;
+    height: 90%;
   }
   .user_img {
     min-width: 50px;

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/style/index.css">
     <link rel="stylesheet" href="./src/style/animation/animation.css">
     <link rel="stylesheet" href="./src/style/perfil.css">
+    <link rel="stylesheet" href="./src/style/config.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
@@ -19,16 +20,6 @@
     <header id="header">
         <div class="user">
             <img src="https://source.unsplash.com/random" alt="" class="user_img">
-            <!-- <div class="user_inf">
-                <div class="user_name">carlos</div>
-                <div class="level">
-                    <span class="number">01</span>
-                    <div class="barra">
-                        <div class="block_one"></div>
-                        <div class="block_two"></div>
-                    </div>
-                </div>
-            </div> -->
             <div class="user_inf">
                 <div class="user_name_perfil">carlos</div>
                 <div class="level_perfil">
@@ -44,14 +35,14 @@
         <nav id="nav">
             <!-- <span id="login-in">Entrar</span>
             <span id="login-up">Cadastrar</span> -->
-            <img style="width:45px; height: 50px" src="public/config.svg" alt="">
+            <img id="config_svg" src="public/config.svg" alt="">
         </nav>
     </header>
     <main>
-        <!---->
+
         <section id="container-difficult">
             <div id="difficult" class="difficult-section">
-                <h3>Dificuldade: <span id="show_difficult">Normal</span></h3>
+                <h3>Dificuldade: <span id="show_difficult" style="color:#4270be">Normal</span></h3>
                 <ul>
                     <li id="easy"><button class="easy-btn choose-difficult">Fácil</button></li>
                     <li id="normal"><button class="normal-btn choose-difficult">Normal</button></li>
