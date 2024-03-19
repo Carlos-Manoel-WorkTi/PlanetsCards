@@ -163,6 +163,53 @@ span {
   background-color: #007bff;
   transition: width 0.3s ease;
 }
+#link_conta {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: auto;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+}
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 60%;
+  width: 30%;
+  height: auto;
+}
+
+.custom-icon {
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+
+.custom-text {
+  width: 80px;
+  background: linear-gradient(
+    45deg,
+    rgb(242, 79, 94),
+    rgb(182, 108, 224),
+    rgb(43, 157, 202),
+    rgb(34, 131, 169)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(160, 98, 226, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(30, 120, 238, 0.8);
+  }
+}
 
 @media screen and (max-width: 860px) {
   #logo_perfil {
@@ -183,9 +230,23 @@ span {
     margin-bottom: 5px;
     margin-top: -5px;
   }
+  .custom-icon {
+    border: none;
+    width: 45px;
+    height: 45px;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .custom-text {
+    width: 70px;
+    font-size: 0.9em;
+  }
+  .custom-icon {
+    border: none;
+    width: 35px;
+    height: 35px;
+  }
   #logo_perfil {
     font-size: 2em;
   }
@@ -227,5 +288,17 @@ span {
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .custom-text {
+    width: 60px;
+    font-size: 0.8em;
+  }
+  .custom-icon {
+    border: none;
+    width: 35px;
+    height: 35px;
   }
 }

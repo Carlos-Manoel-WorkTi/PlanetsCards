@@ -1,11 +1,10 @@
-import DATA_CARDS from "./data";
+import DATA_CARDS from "../data";
 import clock from "./clock";
 import ActiveMenu from "./menu";
 import CardClass from "./cards";
 import generateList from "./generateList";
 import turnCard from "./turnCard";
 import restart from "./restart";
-
 
 clock.createClock();
 clock.start();
@@ -33,7 +32,6 @@ const Container_Cards_normal = document.getElementById(
 const Container_Cards_easy = document.getElementById(
   "container_cards_easy"
 ) as HTMLElement;
-
 
 // EVENTS
 window.document.addEventListener("DOMContentLoaded", () => {
@@ -152,7 +150,7 @@ setInterval(efeitoAleatorio, 30000);
 function alter_show_difficult() {
   const dif = localStorage.getItem("difficult");
   const element = document.getElementById("shower_difficult")!;
-  
+
   if (dif) {
     element.innerText = dif.charAt(0).toUpperCase() + dif.slice(1);
     switch (dif.toLowerCase()) {

@@ -91,7 +91,7 @@ export default function turnCard(card: Event) {
                 CardOne.querySelector(".card-front")!,
                 CardSecond.querySelector(".card-front")!
               );
-              
+
               const list_cards_turned = document.querySelectorAll(".accept");
 
               //  ADD THE CLASS ACCEPT
@@ -99,25 +99,24 @@ export default function turnCard(card: Event) {
               CardSecond.classList.add("accept");
             }
             list_of_cards.forEach((element) => {
-             
               // IF IT WAS OK THEN PUT THE CLASS ACCEPT
               if (!element.classList.contains("accept")) {
-                  element.classList.add("flipped");
-              } 
+                element.classList.add("flipped");
+              }
 
               // RESET THE CORRECTS
               Corrects = [];
-              
             });
-            const allCardsCorrect = list_of_cards.every((element) => element.classList.contains("accept"));
+            const allCardsCorrect = list_of_cards.every((element) =>
+              element.classList.contains("accept")
+            );
             // IF THE PLAYER TO WIN
-            if(allCardsCorrect){
-              win(allCardsCorrect,clock)
+            if (allCardsCorrect) {
+              win(allCardsCorrect, clock);
             }
           }
         }, 500);
       }
     }
   }, 200);
-  
 }

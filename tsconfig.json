@@ -9,6 +9,19 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["src/*/*.ts"],
+  "include": [
+    "src/*/*.ts",
+    "src/script/home/start.ts",
+    "src/script/home/perfil.ts",
+    "src/script/home/configInf.ts",
+    "src/script/game/cards.ts",
+    "src/script/game/clock.ts",
+    "src/script/game/game.ts",
+    "src/script/game/generateList.ts",
+    "src/script/game/menu.ts",
+    "src/script/game/restart.ts",
+    "src/script/game/turnCard.ts",
+    "src/script/game/win.ts"
+  ],
   "exclude": ["node_modules"]
 }

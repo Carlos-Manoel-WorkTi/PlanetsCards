@@ -1,4 +1,4 @@
-import { HandlePerfil, generateUser } from "./perfil";
+import { generateUser } from "./perfil";
 import configInf from "./configInf";
 
 document.addEventListener("DOMContentLoaded", () => {

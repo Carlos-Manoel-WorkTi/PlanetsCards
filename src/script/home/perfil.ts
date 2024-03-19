@@ -1,5 +1,12 @@
-import baseDate from "./valoresteste";
-import User from "./usertest";
+import baseDate from "../valoresteste";
+import User from "../usertest";
+
+if (User) {
+  localStorage.setItem("Logado", JSON.stringify(User));
+} else {
+  localStorage.setItem("Logado", "");
+}
+const Logado = JSON.parse(localStorage.getItem("Logado")!);
 
 export function HandlePerfil(event: Event): void {
   const div = document.createElement("div");
@@ -86,7 +93,9 @@ function generateTable() {
   return table;
 }
 export function generateUser() {
-  const Element = ` 
+  const Element =
+    Logado?.nome != ""
+      ? ` 
     <img src="https://source.unsplash.com/random" alt="" class="user_img">
     <div class="user_inf">
         <div class="user_name_perfil">${User.nome}</div>
@@ -99,23 +108,32 @@ export function generateUser() {
             </div>
         </div>
     </div>
+`
+      : `
+    <a href='#' id='link_conta'>
+<img class="custom-icon" src="https://cdn-icons-png.flaticon.com/128/2521/2521826.png" alt="">
+<div class="custom-text">
+    Criar conta
+</div></a>
 `;
 
   const div = document.createElement("div") as HTMLElement;
-  div.classList.add("user");
+  Logado ? div.classList.add("user") : div.classList.add("custom-container");
   div.innerHTML = Element;
-  console.log(div);
 
   const header = document.getElementById("header") as HTMLElement;
   header.insertAdjacentElement("afterbegin", div);
 
-  const perfil = document.querySelector(".user") as HTMLElement;
-  const progress = document.querySelector(".progress") as HTMLElement;
+  if (Logado) {
+    const perfil = document.querySelector(".user") as HTMLElement;
+    const progress = document.querySelector(".progress") as HTMLElement;
 
-  progress.style.width = `${CalculeXp(1000, User.total_xp)}%`;
+    progress.style.width = `${CalculeXp(1000, User.total_xp)}%`;
 
-  // EVENTS
-  perfil.addEventListener("click", HandlePerfil);
+    // EVENTS
+    perfil.addEventListener("click", HandlePerfil);
+  } else {
+  }
 }
 
 function CalculeXp(total: number, total_xp: number): number {
