@@ -7,7 +7,7 @@
   align-items: center;
   position: absolute;
   z-index: 12;
-  max-height: 90%;
+  max-height: 100%;
 }
 #bloco_perfil {
   width: 70%;
@@ -158,7 +158,6 @@ span {
 }
 
 .progress {
-  /* width: 30%; Define o progresso para 30% */
   height: 100%;
   background-color: #007bff;
   transition: width 0.3s ease;
