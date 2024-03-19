@@ -124,7 +124,7 @@ export function generateUser() {
   const header = document.getElementById("header") as HTMLElement;
   header.insertAdjacentElement("afterbegin", div);
 
-  if (Logado) {
+  if (Logado?.nome != "") {
     const perfil = document.querySelector(".user") as HTMLElement;
     const progress = document.querySelector(".progress") as HTMLElement;
 

@@ -166,17 +166,19 @@ span {
 #link_conta {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 100%;
   height: auto;
   align-items: center;
   text-decoration: none;
   justify-content: center;
+  text-align: center;
+  padding-right: 40%;
 }
 .custom-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 60%;
+
   width: 30%;
   height: auto;
 }
@@ -188,7 +190,8 @@ span {
 }
 
 .custom-text {
-  width: 80px;
+  font-size: 1.2em;
+  width: 100%;
   background: linear-gradient(
     45deg,
     rgb(242, 79, 94),
@@ -239,7 +242,7 @@ span {
 
 @media screen and (max-width: 600px) {
   .custom-text {
-    width: 70px;
+    width: 100%;
     font-size: 0.9em;
   }
   .custom-icon {

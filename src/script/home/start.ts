@@ -64,9 +64,6 @@ function alterDifficult(e: Event): void {
 
 function CheckDifficult() {
   const dif = localStorage.getItem("difficult");
-  console.log(dif);
-
-  console.log(document.querySelector(`#${dif}`) as HTMLElement);
 
   if (dif) {
     (
