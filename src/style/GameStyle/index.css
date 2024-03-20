@@ -91,7 +91,7 @@ html {
   width: 110vw;
   height: 110vh;
   top: -10px;
-  background-color: rgba(0, 0, 0, 0.868);
+  background-color: rgba(0, 0, 0, 0.916);
   z-index: 12;
   display: flex;
   justify-content: center;
@@ -102,22 +102,34 @@ html {
   list-style: none;
   margin-top: -20px;
   padding: 0;
-  margin-left: -23px;
+  margin-left: -25px;
   text-align: center;
+  background-color: rgb(16, 16, 16);
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  border: 1px solid rgb(34, 34, 34);
+  width: 30vw;
+  justify-content: center;
+  align-items: center;
 }
 #container_menu ul li {
   list-style: none;
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 1px;
+  width: 100%;
 }
-#menu_continue {
-  color: rgb(84, 244, 84);
-}
-#menu_reload {
-  color: rgb(26, 41, 201);
-}
-#menu_left {
-  color: red;
+#container_menu ul li span {
+  display: contents;
+  border: 1px solid white;
+  padding: 10px;
+  width: 100%;
+  color: rgb(224, 224, 224);
 }
 
 #menu_continue:hover {
@@ -199,6 +211,9 @@ html {
   margin-left: 4px;
 }
 @media screen and (max-width: 600px) {
+  #container_menu ul {
+    width: 60vw;
+  }
   #container_time {
     width: 130px;
     margin-top: -2px;

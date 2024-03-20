@@ -5,6 +5,12 @@ type Compare = {
   name: string;
   id: string;
 };
+interface clock_interface {
+  createClock(): void; 
+  start(): void;   
+  pauseTimer(): number;
+  
+}
 
 let Corrects: Compare[] = [];
 
@@ -60,6 +66,7 @@ export default function turnCard(card: Event) {
           //REMOVE THE FLIP CLASS
 
           if (Corrects.length == 2) {
+
             if (Corrects[0].id == Corrects[1].id) {
               Corrects.pop();
               return;

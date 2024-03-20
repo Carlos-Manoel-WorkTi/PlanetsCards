@@ -73,18 +73,7 @@
   animation: floatAndBlink 8s linear infinite;
   width: 100%;
   text-align: center;
-}
-
-@keyframes changeColor {
-  0% {
-    color: rgb(112, 21, 239); /* Cor inicial */
-  }
-  50% {
-    color: rgb(28, 112, 246); /* Cor intermediária */
-  }
-  100% {
-    color: rgb(255, 47, 0); /* Cor final */
-  }
+  animation: floatAndBlink 8s linear infinite;
 }
 
 #Logo_winner {

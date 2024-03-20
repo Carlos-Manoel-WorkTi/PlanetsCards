@@ -5,9 +5,10 @@
 //   imagem: "https://source.unsplash.com/random",
 // };
 const User = {
-  nome: "a",
+  nome: "",
   total_xp: 0,
   level: 0,
   imagem: "",
+  sign: false,
 };
 export default User;

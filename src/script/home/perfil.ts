@@ -94,7 +94,7 @@ function generateTable() {
 }
 export function generateUser() {
   const Element =
-    Logado?.nome != ""
+    Logado.sign
       ? ` 
     <img src="https://source.unsplash.com/random" alt="" class="user_img">
     <div class="user_inf">
@@ -118,13 +118,13 @@ export function generateUser() {
 `;
 
   const div = document.createElement("div") as HTMLElement;
-  Logado ? div.classList.add("user") : div.classList.add("custom-container");
+  Logado.sign ? div.classList.add("user") : div.classList.add("custom-container");
   div.innerHTML = Element;
 
   const header = document.getElementById("header") as HTMLElement;
   header.insertAdjacentElement("afterbegin", div);
 
-  if (Logado?.nome != "") {
+  if (Logado.sign) {
     const perfil = document.querySelector(".user") as HTMLElement;
     const progress = document.querySelector(".progress") as HTMLElement;
 

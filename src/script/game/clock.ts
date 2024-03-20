@@ -1,4 +1,11 @@
-class CLOCK {
+interface clock_interface {
+  createClock(): void; 
+  start(): void;   
+  pauseTimer(): number;
+  
+}
+
+class CLOCK implements clock_interface {
   private time: number = 0;
   private current_time: number = 0;
   private pause: boolean = false;
@@ -39,7 +46,7 @@ class CLOCK {
   }
 
   // Método para pausar o cronômetro
-  pauseTimer():Number {
+  pauseTimer(): number {
     this.current_time = this.time;
     if (this.intervalId) {
       clearInterval(this.intervalId);
@@ -76,6 +83,8 @@ class CLOCK {
     return value < 10 ? `0${value}` : `${value}`;
   }
 }
+
+
 
 // Exemplo de uso:
 const clock = new CLOCK(0);
