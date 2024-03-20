@@ -5,13 +5,13 @@
   perspective: 1000px;
   z-index: 6;
 }
-.card-easy {
+/* .card-easy {
   width: 79px;
   height: 90px;
   position: relative;
   perspective: 1000px;
   z-index: 6;
-}
+} */
 
 .card-front,
 .card-back {

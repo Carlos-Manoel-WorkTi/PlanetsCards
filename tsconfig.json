@@ -11,7 +11,7 @@
   },
   "include": [
     "src/*/*.ts",
-    "src/script/home/start.ts",
+    "src/script/home/home.ts",
     "src/script/home/perfil.ts",
     "src/script/home/configInf.ts",
     "src/script/game/cards.ts",

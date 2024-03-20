@@ -1,0 +1,100 @@
+.winner-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.915);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 13;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  text-align: center;
+  color: white;
+  z-index: 13;
+  width: auto;
+  padding: 10% 10%;
+  height: 50%;
+  background-color: rgb(18, 18, 18);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.winner-info {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+}
+#replay-btn {
+  background-color: #df3535;
+}
+#exit-btn {
+  background-color: #3bdf35;
+}
+#winner-titulo {
+  font-size: 1.9em;
+  margin-top: 0;
+  animation: floatAndBlink 8s linear infinite;
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes changeColor {
+  0% {
+    color: rgb(112, 21, 239); /* Cor inicial */
+  }
+  50% {
+    color: rgb(28, 112, 246); /* Cor intermediária */
+  }
+  100% {
+    color: rgb(255, 47, 0); /* Cor final */
+  }
+}
+
+#Logo_winner {
+  font-size: 2.3em;
+  animation: floatAndBlink 8s linear infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 10% 10%;
+    height: 70%;
+  }
+}

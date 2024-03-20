@@ -1,8 +1,9 @@
 class CLOCK {
-  private time: number = 0; // Tempo em segundos
+  private time: number = 0;
   private current_time: number = 0;
   private pause: boolean = false;
-  private intervalId: NodeJS.Timeout | null = null; // ID do intervalo para atualização do tempo
+  private intervalId: NodeJS.Timeout | null = null; 
+  
 
   constructor(initialTime: number) {
     this.time = initialTime;

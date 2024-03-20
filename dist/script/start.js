@@ -20,6 +20,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/script/home/home.ts":
+/*!*********************************!*\
+  !*** ./src/script/home/home.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _perfil__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./perfil */ \"./src/script/home/perfil.ts\");\n/* harmony import */ var _configInf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./configInf */ \"./src/script/home/configInf.ts\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  CheckDifficult();\n  (0,_perfil__WEBPACK_IMPORTED_MODULE_0__.generateUser)();\n});\nvar ContainerDifficult = document.getElementById(\"container-difficult\");\nvar link_start = document.getElementById(\"link_start\");\nvar btn_config = document.getElementById(\"config_svg\");\n\n// EVENTS\n\nfunction StartGame(e) {\n  if (!localStorage.getItem(\"difficult\")) {\n    alert(\"Selecione um nivel\");\n    e.preventDefault();\n  }\n}\n\n// EVENTS\n\nContainerDifficult.addEventListener(\"click\", alterDifficult);\nlink_start.addEventListener(\"click\", StartGame);\nbtn_config === null || btn_config === void 0 || btn_config.addEventListener(\"click\", _configInf__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n// FUNCTION\nfunction alterDifficult(e) {\n  var element = e.target;\n  var show_dif = document.getElementById(\"show_difficult\");\n  if (element.classList.contains(\"choose-difficult\")) {\n    document.querySelectorAll(\".choose-difficult\").forEach(function (x) {\n      x.classList.remove(\"current-level\");\n    });\n    element.classList.add(\"current-level\");\n    localStorage.setItem(\"difficult\", element.parentElement.id);\n    show_dif.innerText = element.parentElement.id.charAt(0).toUpperCase() + element.parentElement.id.slice(1);\n    switch (show_dif.innerText) {\n      case \"Hard\":\n        show_dif.style.color = \"#9c0404\";\n        break;\n      case \"Normal\":\n        show_dif.style.color = \"#4270be\";\n        break;\n      case \"Easy\":\n        show_dif.style.color = \"green\";\n        break;\n      default:\n        // Defina uma cor padrão aqui, se desejar\n        show_dif.style.color = \"\";\n    }\n  }\n}\nfunction CheckDifficult() {\n  var dif = localStorage.getItem(\"difficult\");\n  if (dif) {\n    document.querySelector(\"#\".concat(dif)).firstElementChild.classList.add(\"current-level\");\n    localStorage.setItem(\"difficult\", dif);\n  } else {\n    localStorage.setItem(\"difficult\", \"normal\");\n  }\n}\n\n//# sourceURL=webpack://planestgame/./src/script/home/home.ts?");
+
+/***/ }),
+
 /***/ "./src/script/home/perfil.ts":
 /*!***********************************!*\
   !*** ./src/script/home/perfil.ts ***!
@@ -30,23 +40,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/script/home/start.ts":
-/*!**********************************!*\
-  !*** ./src/script/home/start.ts ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _perfil__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./perfil */ \"./src/script/home/perfil.ts\");\n/* harmony import */ var _configInf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./configInf */ \"./src/script/home/configInf.ts\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  CheckDifficult();\n  (0,_perfil__WEBPACK_IMPORTED_MODULE_0__.generateUser)();\n});\nvar ContainerDifficult = document.getElementById(\"container-difficult\");\nvar link_start = document.getElementById(\"link_start\");\nvar btn_config = document.getElementById(\"config_svg\");\n\n// EVENTS\n\nfunction StartGame(e) {\n  if (!localStorage.getItem(\"difficult\")) {\n    alert(\"Selecione um nivel\");\n    e.preventDefault();\n  }\n}\n\n// EVENTS\n\nContainerDifficult.addEventListener(\"click\", alterDifficult);\nlink_start.addEventListener(\"click\", StartGame);\nbtn_config === null || btn_config === void 0 || btn_config.addEventListener(\"click\", _configInf__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n// FUNCTION\nfunction alterDifficult(e) {\n  var element = e.target;\n  var show_dif = document.getElementById(\"show_difficult\");\n  if (element.classList.contains(\"choose-difficult\")) {\n    document.querySelectorAll(\".choose-difficult\").forEach(function (x) {\n      x.classList.remove(\"current-level\");\n    });\n    element.classList.add(\"current-level\");\n    localStorage.setItem(\"difficult\", element.parentElement.id);\n    show_dif.innerText = element.parentElement.id.charAt(0).toUpperCase() + element.parentElement.id.slice(1);\n    switch (show_dif.innerText) {\n      case \"Hard\":\n        show_dif.style.color = \"#9c0404\";\n        break;\n      case \"Normal\":\n        show_dif.style.color = \"#4270be\";\n        break;\n      case \"Easy\":\n        show_dif.style.color = \"green\";\n        break;\n      default:\n        // Defina uma cor padrão aqui, se desejar\n        show_dif.style.color = \"\";\n    }\n  }\n}\nfunction CheckDifficult() {\n  var dif = localStorage.getItem(\"difficult\");\n  if (dif) {\n    document.querySelector(\"#\".concat(dif)).firstElementChild.classList.add(\"current-level\");\n    localStorage.setItem(\"difficult\", dif);\n  } else {\n    localStorage.setItem(\"difficult\", \"normal\");\n  }\n}\n\n//# sourceURL=webpack://planestgame/./src/script/home/start.ts?");
-
-/***/ }),
-
 /***/ "./src/script/usertest.ts":
 /*!********************************!*\
   !*** ./src/script/usertest.ts ***!
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// const User = {\n//   nome: \"Ana\",\n//   total_xp: 20,\n//   level: 91,\n//   imagem: \"https://source.unsplash.com/random\",\n// };\nvar User = {\n  nome: \"\",\n  total_xp: 0,\n  level: 0,\n  imagem: \"\"\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (User);\n\n//# sourceURL=webpack://planestgame/./src/script/usertest.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// const User = {\n//   nome: \"Ana\",\n//   total_xp: 20,\n//   level: 91,\n//   imagem: \"https://source.unsplash.com/random\",\n// };\nvar User = {\n  nome: \"a\",\n  total_xp: 0,\n  level: 0,\n  imagem: \"\"\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (User);\n\n//# sourceURL=webpack://planestgame/./src/script/usertest.ts?");
 
 /***/ }),
 
@@ -120,7 +120,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/script/home/start.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/script/home/home.ts");
 /******/ 	
 /******/ })()
 ;

@@ -5,7 +5,7 @@
 //   imagem: "https://source.unsplash.com/random",
 // };
 const User = {
-  nome: "",
+  nome: "a",
   total_xp: 0,
   level: 0,
   imagem: "",
