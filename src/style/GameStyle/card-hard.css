@@ -69,7 +69,7 @@
 @media screen and (max-width: 391px) {
   #container_cards_hard {
     height: 96%;
-    column-gap: 10px;
+    /* column-gap: 0px;  */
     padding: 5px;
   }
   .card-hard {
@@ -79,7 +79,13 @@
 }
 @media screen and (max-width: 325px) {
   .card-hard {
-    width: 50px;
-    height: 55px;
+    width: 46px;
+    height: 54px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .card-hard {
+    width: 48px;
+    height: 54px;
   }
 }
