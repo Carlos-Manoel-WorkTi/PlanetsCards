@@ -68,7 +68,7 @@
 }
 @media screen and (max-width: 391px) {
   #container_cards_hard {
-    height: 96%;
+    height: 100%;
     /* column-gap: 0px;  */
     padding: 5px;
   }
