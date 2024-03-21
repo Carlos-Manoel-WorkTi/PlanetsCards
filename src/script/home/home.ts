@@ -4,6 +4,7 @@ import configInf from "./configInf";
 document.addEventListener("DOMContentLoaded", () => {
   CheckDifficult();
   generateUser();
+  salveLife();
 });
 
 const ContainerDifficult = document.getElementById(
@@ -14,8 +15,6 @@ const link_start = document.getElementById("link_start") as HTMLElement;
 
 const btn_config = document.getElementById("config_svg");
 
-// EVENTS
-
 function StartGame(e: Event): void {
   if (!localStorage.getItem("difficult")) {
     alert("Selecione um nivel");
@@ -23,6 +22,9 @@ function StartGame(e: Event): void {
   }
 }
 
+function salveLife() {
+  localStorage.setItem("qtd_life", "20");
+}
 // EVENTS
 
 ContainerDifficult.addEventListener("click", alterDifficult);

@@ -1,15 +1,15 @@
 import clock from "./clock";
 import win from "./win";
+import life from "./lifes";
 
 type Compare = {
   name: string;
   id: string;
 };
 interface clock_interface {
-  createClock(): void; 
-  start(): void;   
+  createClock(): void;
+  start(): void;
   pauseTimer(): number;
-  
 }
 
 let Corrects: Compare[] = [];
@@ -66,7 +66,6 @@ export default function turnCard(card: Event) {
           //REMOVE THE FLIP CLASS
 
           if (Corrects.length == 2) {
-
             if (Corrects[0].id == Corrects[1].id) {
               Corrects.pop();
               return;
@@ -104,7 +103,10 @@ export default function turnCard(card: Event) {
               //  ADD THE CLASS ACCEPT
               CardOne.classList.add("accept");
               CardSecond.classList.add("accept");
+            } else {
+              life.SubLife();
             }
+
             list_of_cards.forEach((element) => {
               // IF IT WAS OK THEN PUT THE CLASS ACCEPT
               if (!element.classList.contains("accept")) {
@@ -117,6 +119,10 @@ export default function turnCard(card: Event) {
             const allCardsCorrect = list_of_cards.every((element) =>
               element.classList.contains("accept")
             );
+            //CHECK IF LOST
+            if (life.CurrentLives <= 0) {
+              win(true, clock);
+            }
             // IF THE PLAYER TO WIN
             if (allCardsCorrect) {
               win(allCardsCorrect, clock);

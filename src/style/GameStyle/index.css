@@ -27,17 +27,19 @@ html {
 }
 #header_game {
   height: 55px;
-  width: 100%;
+  width: 100vw;
   background: linear-gradient(to bottom, black 20%, transparent);
   display: flex;
-  justify-content: center;
-  gap: 20%;
+  justify-content: space-around;
+  /* gap: 20%; */
   align-items: center;
-  padding: 10px 10px;
+  padding: 10px 0px;
   border-bottom: 1px solid rgb(255, 255, 255);
   z-index: 11;
 }
-
+#menu {
+  width: 100px;
+}
 #opt {
   padding-right: 20px;
   display: flex;
@@ -46,40 +48,56 @@ html {
   gap: 15px;
 }
 
-#opt img {
-  width: 30px;
-}
-
 #menu img {
   height: 30px;
+  margin-left: 60px;
 }
 
 #watch {
   height: 40px;
 }
 
+#time {
+  font-size: 1.5em;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+#time_min_sec {
+  width: auto;
+}
+#time_mls {
+  font-size: 0.6em;
+  margin-left: 5px;
+  color: rgb(77, 40, 180);
+  width: 30px;
+}
+#divisor_time {
+  color: rgb(51, 31, 167);
+  margin: 2px;
+}
+#container_time {
+  width: 150px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -4px;
+  border-radius: 10px;
+  background-color: rgb(0 0 0 / 69%);
+  border: 1px solid #0e0d1dc2;
+  height: 50px;
+}
 #btn_audio {
   height: 30px;
 }
 
 #btn_repeat {
   height: 30px;
-}
-
-#container_time {
-  width: 160px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: -4px;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.83);
-  border: 1px solid white;
-  height: 55px;
-}
-
-#time {
-  font-size: 2em;
 }
 
 /* MENU */
@@ -186,7 +204,8 @@ html {
 }
 #current_difficult h5 {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.663);
   padding: 10px;
   margin: 0;
@@ -197,20 +216,70 @@ html {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 #current_difficult strong {
   color: rgb(228, 228, 228);
-  font-size: 1.8em;
+  font-size: 1.3em;
   margin-left: 10px;
 }
 #current_difficult span {
   color: rgb(63, 142, 238);
-  font-size: 1.6em;
+  font-size: 1.3em;
   margin-top: 1px;
 }
 #shower_difficult {
   margin-left: 4px;
 }
+#btns_rep_aud {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+#bloco_lives {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(11, 11, 11, 0.551);
+  border-radius: 10px;
+  height: 55px;
+  padding: 0 10px;
+}
+#img_life {
+  width: 70px;
+}
+#rest_lives {
+  font-size: 2em;
+}
+@media screen and (max-width: 900px) {
+  #header_game {
+    justify-content: space-around;
+    gap: 15%;
+    align-items: center;
+    padding: 10px 10px 10px 0;
+  }
+  #menu img {
+    height: 30px;
+    margin-left: 25px;
+  }
+}
 @media screen and (max-width: 600px) {
+  #header_game {
+    padding: 0;
+  }
+  #menu img {
+    height: 30px;
+    margin-left: 2px;
+  }
+  #bloco_lives {
+    height: 50px;
+    padding: 0 6px;
+  }
+  #img_life {
+    width: 50px;
+  }
+  #rest_lives {
+    font-size: 1.4em;
+  }
   #container_menu ul {
     width: 60vw;
   }
@@ -222,7 +291,7 @@ html {
     margin-left: 3px;
   }
   #time {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   #watch {
     height: 35px;
@@ -231,7 +300,7 @@ html {
   #header_game {
     height: 55px;
     width: 100%;
-    background: linear-gradient(to bottom, black 20%, transparent);
+    background: linear-gradient(to bottom, black 20%, #0000009e);
     display: flex;
     justify-content: space-around;
     gap: 12%;
@@ -253,9 +322,8 @@ html {
     display: flex;
   }
   #current_difficult h5 {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.663);
+    /* background-color: rgba(0, 0, 0, 0.663);*/
+    background: linear-gradient(to bottom, #0000009e 30%, transparent);
     padding: 20px;
     margin: 0;
     width: 100%;
@@ -264,6 +332,12 @@ html {
 }
 
 @media screen and (max-width: 410px) {
+  #time {
+    font-size: 1em;
+  }
+  #menu img {
+    height: 20px;
+  }
   #header_game {
     height: 55px;
     width: 100%;

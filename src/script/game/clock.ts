@@ -1,91 +1,95 @@
+import win from "./win";
+
 interface clock_interface {
-  createClock(): void; 
-  start(): void;   
+  createClock(): void;
+  start(): void;
   pauseTimer(): number;
-  
 }
 
 class CLOCK implements clock_interface {
   private time: number = 0;
   private current_time: number = 0;
   private pause: boolean = false;
-  private intervalId: NodeJS.Timeout | null = null; 
-  
+  private intervalId: NodeJS.Timeout | null = null;
 
   constructor(initialTime: number) {
-    this.time = initialTime;
-    this.current_time = initialTime;
+    this.time = initialTime * 1000; // Convertendo segundos para milissegundos
+    this.current_time = initialTime * 1000; // Convertendo segundos para milissegundos
   }
 
-  // Método para criar o elemento do relógio na página
+  start(): void {
+    this.time = this.current_time;
+    this.pause = false;
+
+    if (!this.pause) {
+      const startTime = Date.now();
+      this.intervalId = setInterval(() => {
+        const elapsedTime = Date.now() - startTime;
+        this.current_time = this.time - elapsedTime;
+        if (this.current_time <= 0) {
+          this.current_time = 0;
+          this.stop();
+          win(true, clock);
+        }
+        this.updateTime();
+      }, 10);
+    }
+  }
+
+  pauseTimer(): number {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+      this.pause = true;
+    }
+    return Math.ceil(this.current_time / 1000);
+  }
+
+  stop(): void {
+    this.pauseTimer();
+    this.time = 0;
+    this.updateTime();
+  }
   createClock(): void {
     const container = document.createElement("div");
     container.id = "container_time";
-    container.innerHTML = `
-        <img id="watch" src="../../public/game/watch.svg" alt="">
-        <span id="time">${this.formatTime()}</span>
-      `;
+    const div_time = document.createElement("span");
+    div_time.id = "time";
+    div_time.innerHTML = this.formatTime();
+    container.appendChild(div_time);
     (document.getElementById("menu") as HTMLElement).insertAdjacentElement(
       "afterend",
       container
     );
   }
 
-  // Método para iniciar o cronômetro
-  start(): void {
-    this.time = this.current_time;
-    this.pause = false
-   
-
-    if (!this.pause) {
-      this.intervalId = setInterval(() => {
-        this.time++;
-        this.updateTime();
-      }, 1000);
-    }
-  }
-
-  // Método para pausar o cronômetro
-  pauseTimer(): number {
-    this.current_time = this.time;
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-      this.intervalId = null;
-      this.pause = true;
-    }
-    return this.current_time 
-  }
-
-  // Método para parar o cronômetro
-  stop(): void {
-    this.pauseTimer();
-    this.time = 0;
-    this.updateTime();
-  }
-
-  // Método para atualizar o tempo exibido na página
-  private updateTime(): void {
+  private updateTime() {
     const timeElement = document.getElementById("time");
     if (timeElement) {
-      timeElement.innerText = this.formatTime();
+      timeElement.innerHTML = this.formatTime();
     }
   }
 
-  // Método para formatar o tempo em HH:MM:SS
   private formatTime(): string {
-    const minutes = Math.floor((this.time % 3600) / 60);
-    const seconds = this.time % 60;
-    return `${this.padZero(minutes)}:${this.padZero(seconds)}`;
+    const totalSeconds = Math.floor(this.current_time / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const milliseconds = this.current_time % 1000;
+    const div_time = `<span id='time_min_sec'>${this.padZero(
+      minutes
+    )}<span id='divisor_time'>:</span>${this.padZero(
+      seconds
+    )}<span id='divisor_time'>:</span></span><span id='time_mls'>${this.padZero(
+      Math.floor(milliseconds / 10)
+    )}0</span>`;
+
+    return div_time;
   }
 
-  // Método auxiliar para adicionar zero à esquerda se o valor for menor que 10
   private padZero(value: number): string {
     return value < 10 ? `0${value}` : `${value}`;
   }
 }
 
-
-
-// Exemplo de uso:
-const clock = new CLOCK(0);
+const clock = new CLOCK(300);
 export default clock;

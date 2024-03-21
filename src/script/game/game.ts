@@ -4,6 +4,7 @@ import ActiveMenu from "./menu";
 import CardClass from "./cards";
 import generateList from "./generateList";
 import turnCard from "./turnCard";
+import life from "./lifes";
 import restart from "./restart";
 
 clock.createClock();
@@ -32,16 +33,22 @@ const Container_Cards_normal = document.getElementById(
 const Container_Cards_easy = document.getElementById(
   "container_cards_easy"
 ) as HTMLElement;
+const Container_clock = document.getElementById("rest_lives") as HTMLElement;
 
 // EVENTS
 window.document.addEventListener("DOMContentLoaded", () => {
   renderCards();
   alter_show_difficult();
+  life.LoadFirstLife();
 });
 btn_menu.addEventListener("click", (event) => ActiveMenu(event, clock));
 Container_Cards_easy?.addEventListener("click", turnCard);
 Container_Cards_normal?.addEventListener("click", turnCard);
 Container_Cards_hard?.addEventListener("click", turnCard);
+Container_clock.addEventListener("change", () => {
+  checkTime();
+  console.log(1);
+});
 btn_restart.addEventListener("click", (x) => restart(clock));
 
 function renderCards() {
@@ -94,6 +101,10 @@ function checkDifficult(level: string) {
   if (level == "hard") {
     container.id = "container_cards_hard";
   }
+}
+
+function checkTime() {
+  // console.log(clock.timeOver);
 }
 
 const efeitos = [

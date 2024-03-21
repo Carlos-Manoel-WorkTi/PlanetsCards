@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./dist/style/GameStyle/style.css">
     <!-- <link rel="stylesheet" href="./dist/style/homeStyle/style.css"> -->
     <script src="./dist/script/game.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <title>Game</title>
 </head>
 
@@ -24,17 +27,29 @@
         <div id="menu">
             <img src="./public/game/menu.svg" alt="">
         </div>
-
         <div id="opt">
-            <img id="btn_repeat" src="./public/game/repeat.svg" alt="">
-            <img id="btn_audio" src="./public/game/audio.svg" alt="">
+            <div id="bloco_lives">
+                <span id="rest_lives" >5</span>
+                <img src="./public/pngegg.png" alt="" srcset="" id="img_life">
+            </div>
+
         </div>
 
     </header>
 
 
     <section id="current_difficult">
-        <h5><strong>Modo: </strong> <span id="shower_difficult">normal</span></h5>
+        <h5>
+            <span>
+                <strong>Modo: </strong> <span id="shower_difficult">normal</span>
+            </span>
+            <span id="btns_rep_aud">
+                <img id="btn_repeat" src="./public/game/repeat.svg" alt="">
+                <img id="btn_audio" src="./public/game/audio.svg" alt="">
+            </span>
+
+
+        </h5>
     </section>
     <main id="main">
         <section class="container">
