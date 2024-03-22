@@ -52,16 +52,16 @@ Container_clock.addEventListener("change", () => {
 btn_restart.addEventListener("click", (x) => restart(clock));
 
 function renderCards() {
-  const level = localStorage.getItem("difficult");
+  const level = JSON.parse(localStorage.getItem("infoGame") || "");
 
-  checkDifficult(level!);
+  checkDifficult(level.difficult!);
 
   setTimeout(() => {
     planets.map((obj) => {
-      const model_card = new CardClass(obj.name, obj.image, obj.id!, level!);
+      const model_card = new CardClass(obj.name, obj.image, obj.id!, level.difficult!);
       const card = model_card.createCard();
 
-      if (level == "easy") {
+      if (level.difficult == "easy") {
         (
           document.getElementById("container_cards_easy") as HTMLElement
         ).innerHTML += card;
@@ -69,7 +69,7 @@ function renderCards() {
           document.getElementById("container_cards_easy") as HTMLElement
         ).addEventListener("click", turnCard);
       }
-      if (level == "normal") {
+      if (level.difficult == "normal") {
         (
           document.getElementById("container_cards_normal") as HTMLElement
         ).innerHTML += card;
@@ -77,7 +77,7 @@ function renderCards() {
           document.getElementById("container_cards_normal") as HTMLElement
         ).addEventListener("click", turnCard);
       }
-      if (level == "hard") {
+      if (level.difficult == "hard") {
         (
           document.getElementById("container_cards_hard") as HTMLElement
         ).innerHTML += card;
@@ -159,12 +159,13 @@ efeitoAleatorio();
 setInterval(efeitoAleatorio, 30000);
 
 function alter_show_difficult() {
-  const dif = localStorage.getItem("difficult");
+  const dif = JSON.parse(localStorage.getItem("infoGame") || "");
   const element = document.getElementById("shower_difficult")!;
 
-  if (dif) {
-    element.innerText = dif.charAt(0).toUpperCase() + dif.slice(1);
-    switch (dif.toLowerCase()) {
+
+  if (dif.difficult) {
+    element.innerText = dif.difficult.charAt(0).toUpperCase() + dif.difficult.slice(1);
+    switch (dif.difficult.toLowerCase()) {
       case "hard":
         element.style.color = "#9c0404";
         break;
@@ -175,7 +176,6 @@ function alter_show_difficult() {
         element.style.color = "green";
         break;
       default:
-        // Defina uma cor padrão aqui, se desejar
         element.style.color = "black";
     }
   } else {

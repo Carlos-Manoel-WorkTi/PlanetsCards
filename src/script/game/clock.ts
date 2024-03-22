@@ -90,6 +90,9 @@ class CLOCK implements clock_interface {
     return value < 10 ? `0${value}` : `${value}`;
   }
 }
+const prop = JSON.parse(localStorage.getItem("infoGame") || '0') 
 
-const clock = new CLOCK(300);
+const clock = new CLOCK(parseInt(prop.time));
+
+
 export default clock;

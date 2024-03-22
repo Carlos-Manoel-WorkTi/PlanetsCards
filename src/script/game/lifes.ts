@@ -2,7 +2,7 @@
 
 
 class LIVES {
-  qtd_lives_init: number = parseInt(localStorage.getItem("qtd_life") || "0");
+  qtd_lives_init: number = parseInt(JSON.parse(localStorage.getItem("infoGame") || "0").qtd_life);
   qtd_lives: number = 0;
   show_lives = document.getElementById("rest_lives") as HTMLElement;
 
@@ -23,5 +23,6 @@ class LIVES {
     return this.qtd_lives
   }
 }
-const life = new LIVES(parseInt(localStorage.getItem("qtd_life") || "0"));
+const prop = JSON.parse(localStorage.getItem("infoGame") || "0")
+const life = new LIVES(parseInt(prop.qtd_life))
 export default life;

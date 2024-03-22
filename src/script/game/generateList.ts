@@ -20,17 +20,18 @@ function generateUniqueID() {
 }
 
 export default function generateList(list: Planet[]): Planet[] {
-  const level = localStorage.getItem("difficult");
-
+  const level = JSON.parse(localStorage.getItem("infoGame") || "");
+  
+  
   let copyList: Planet[] = [];
 
-  if (level == "easy") {
+  if (level.difficult == "easy") {
     copyList.push(...list.slice(0, 6));
   }
-  if (level == "normal") {
+  if (level.difficult == "normal") {
     copyList.push(...list.slice(0,10));
   }
-  if (level == "hard") {
+  if (level.difficult == "hard") {
     copyList.push(...list.slice());
   }
 

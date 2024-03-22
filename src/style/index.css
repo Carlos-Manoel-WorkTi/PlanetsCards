@@ -115,10 +115,10 @@ html {
   min-width: 290px;
   position: absolute;
   width: 98%;
-  height: 200px;
+  height: 15 0px;
   z-index: 7;
   background-color: rgba(255, 255, 255, 0);
-  margin-top: 69vh;
+  margin-top: 73vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,8 +169,55 @@ html {
   opacity: 1;
   transform: scale(1.1);
 }
-
+#choose-time {
+  z-index: 15;
+  position: absolute;
+  color: white;
+  margin-top: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#choose-time label {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: -18px;
+}
+#choose-time select {
+  outline: none;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(183, 183, 183);
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  border: none;
+}
+#choose-time select option {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.946);
+  outline: none;
+}
+@media screen and (max-width: 800px) {
+  #choose-time label {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: -9px;
+  }
+}
 @media screen and (max-width: 600px) {
+  #choose-time {
+    margin-top: 62vh;
+  }
+
+  #choose-time label {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: -22px;
+  }
   #containerVideo {
     width: 100vw;
     height: 100vh;
@@ -277,15 +324,13 @@ html {
     opacity: 1;
     transform: scale(1.2);
   }
-
-
 }
 
 @media screen and (max-width: 300px) {
   .difficult-section {
     width: 90%;
     height: 200px;
-    margin-top: 60vh;
+    margin-top: 66vh;
     display: flex;
     flex-direction: column;
     align-items: center;

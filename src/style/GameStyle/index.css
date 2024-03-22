@@ -77,7 +77,8 @@ html {
   width: 30px;
 }
 #divisor_time {
-  color: rgb(51, 31, 167);
+  color: rgb(113, 43, 217);
+  font-size: 1.2em;
   margin: 2px;
 }
 #container_time {

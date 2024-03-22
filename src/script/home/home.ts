@@ -1,5 +1,6 @@
 import { generateUser } from "./perfil";
 import configInf from "./configInf";
+import InformUser from "../date_storage";
 
 document.addEventListener("DOMContentLoaded", () => {
   CheckDifficult();
@@ -16,19 +17,34 @@ const link_start = document.getElementById("link_start") as HTMLElement;
 const btn_config = document.getElementById("config_svg");
 
 function StartGame(e: Event): void {
-  if (!localStorage.getItem("difficult")) {
-    alert("Selecione um nivel");
+  const dif_ok = JSON.parse(localStorage.getItem("infoGame") || '')
+  if (dif_ok.difficult == '') {
+    alert("Selecione um nível");
     e.preventDefault();
   }
 }
 
 function salveLife() {
-  localStorage.setItem("qtd_life", "20");
+  InformUser.qtd_life = "10";
+  saveGameData();
 }
+
+function salveTime() {
+  const choose_time = document.getElementById("tempo") as HTMLSelectElement;
+
+  if (choose_time.selectedIndex !== -1) {
+    InformUser.time = choose_time.options[choose_time.selectedIndex].value;
+    saveGameData();
+  }
+}
+
 // EVENTS
 
 ContainerDifficult.addEventListener("click", alterDifficult);
-link_start.addEventListener("click", StartGame);
+link_start.addEventListener("click", (x) => {
+  salveTime();
+  StartGame(x);
+});
 btn_config?.addEventListener("click", configInf);
 
 // FUNCTION
@@ -42,7 +58,8 @@ function alterDifficult(e: Event): void {
     });
 
     element.classList.add("current-level");
-    localStorage.setItem("difficult", element!.parentElement!.id);
+    InformUser.difficult = element!.parentElement!.id;
+    saveGameData();
     show_dif!.innerText =
       element!.parentElement!.id.charAt(0).toUpperCase() +
       element!.parentElement!.id.slice(1);
@@ -64,15 +81,40 @@ function alterDifficult(e: Event): void {
   }
 }
 
-function CheckDifficult() {
-  const dif = localStorage.getItem("difficult");
+function saveGameData() {
+  const gameData = {
+    difficult: InformUser.difficult,
+    qtd_life: InformUser.qtd_life,
+    time: InformUser.time,
+    
+  };
 
+  const gameDataString = JSON.stringify(gameData);
+  localStorage.setItem("infoGame", gameDataString);
+}
+
+// function CheckDifficult() {
+//   const gameDataString = localStorage.getItem("infoGame");
+//   if (gameDataString) {
+//     const gameData = JSON.parse(gameDataString);
+//     InformUser.difficult = gameData.difficult || "normal";
+//     InformUser.qtd_life = gameData.qtd_life || "10";
+//     InformUser.time = gameData.time || "";
+//   } else {
+//     saveGameData();
+//   }
+// }
+function CheckDifficult() {
+  const dif = JSON.parse(localStorage.getItem("infoGame")!);
+  InformUser.difficult = dif.difficult || "normal";
   if (dif) {
     (
-      document.querySelector(`#${dif}`) as HTMLElement
+      document.querySelector(`#${dif.difficult}`) as HTMLElement
     ).firstElementChild!.classList.add("current-level");
-    localStorage.setItem("difficult", dif);
   } else {
-    localStorage.setItem("difficult", "normal");
+    (
+      document.querySelector(`#${dif.difficult}`) as HTMLElement
+    ).firstElementChild!.classList.add("current-level");
+    saveGameData()
   }
 }

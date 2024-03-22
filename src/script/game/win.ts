@@ -56,16 +56,16 @@ export default function win(win: boolean, time: clock_interface) {
   if (win) {
     const TimeEnd = calculeTime(time);
 
-    const level = localStorage.getItem("difficult");
+    const level = JSON.parse(localStorage.getItem("infoGame") || "0");
 
-    if (level == "easy") {
+    if (level.difficult == "easy") {
       document.body.append(createElement("facil", "100", TimeEnd));
     }
-    if (level == "normal") {
+    if (level.difficult == "normal") {
       console.log("Ganhou no modo normal");
       document.body.append(createElement("normal", "200", TimeEnd));
     }
-    if (level == "hard") {
+    if (level.difficult == "hard") {
       console.log("Ganhou no modo dificil");
       document.body.append(createElement("dificil", "350", TimeEnd));
     }
