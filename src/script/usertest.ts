@@ -1,14 +1,15 @@
-// const User = {
-//   nome: "Ana",
-//   total_xp: 20,
-//   level: 91,
-//   imagem: "https://source.unsplash.com/random",
-// };
-const User = {
+import { getUserFromCookie, updateUserCookie } from "./cookies";
+
+const UserCokies = {
   nome: "",
   total_xp: 0,
   level: 0,
   imagem: "",
-  sign: false,
+  sign: true,
 };
-export default User;
+
+const User = getUserFromCookie();
+
+updateUserCookie(UserCokies);
+
+export default UserCokies;

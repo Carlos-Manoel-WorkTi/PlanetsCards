@@ -11,6 +11,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <title>Game</title>
+    <script async>
+        function getUserFromCookie() {
+        const cookieString = decodeURIComponent(document.cookie);
+        const cookieArray = cookieString.split(";");
+
+        let userData = null;
+
+        for (const cookie of cookieArray) {
+            const trimmedCookie = cookie.trim();
+            if (trimmedCookie.startsWith("User=")) {
+                const userJson = trimmedCookie.substring(5); 
+                userData = JSON.parse(userJson); 
+                break;
+            }
+        }
+        if (userData && userData.sign !== null) {
+            return userData.sign;
+        } else {
+            return null;
+        }
+        }
+
+        const infUser = getUserFromCookie();
+        if (infUser !== null) {
+            infUser ? '' : (location.href = '/');
+        } else {
+            location.href = '/';
+        }
+
+    </script>
 </head>
 
 <body id="root_game">

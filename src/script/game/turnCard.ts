@@ -128,8 +128,8 @@ export default function turnCard(card: Event) {
               win(allCardsCorrect, clock);
             }
           }
-        }, 500);
+        }, 400);
       }
     }
-  }, 200);
+  }, 100);
 }

@@ -1,13 +1,10 @@
-import { generateUser } from "./perfil";
+// IMPORTS
+import generateUser from "./perfil";
 import configInf from "./configInf";
 import InformUser from "../date_storage";
+import { applyContent, getUserFromCookie } from "../cookies";
 
-document.addEventListener("DOMContentLoaded", () => {
-  CheckDifficult();
-  generateUser();
-  salveLife();
-});
-
+// VAR
 const ContainerDifficult = document.getElementById(
   "container-difficult"
 ) as HTMLElement;
@@ -16,16 +13,57 @@ const link_start = document.getElementById("link_start") as HTMLElement;
 
 const btn_config = document.getElementById("config_svg");
 
+// EVENTS
+document.addEventListener("DOMContentLoaded", () => {
+  applyContent();
+  generateUser();
+  CheckDifficult();
+});
+
+ContainerDifficult.addEventListener("click", alterDifficult);
+
+link_start.addEventListener("click", (x) => {
+  salveTime();
+  StartGame(x);
+});
+
+btn_config?.addEventListener("click", configInf);
+
+// FUNCTIONS
 function StartGame(e: Event): void {
-  const dif_ok = JSON.parse(localStorage.getItem("infoGame") || '')
-  if (dif_ok.difficult == '') {
+  const user = getUserFromCookie();
+  if (user === null) {
+    e.preventDefault();
+    applyContent()
+    return;
+  }
+
+  user.sign ? "" : e.preventDefault();
+
+  const dif_ok = JSON.parse(localStorage.getItem("infoGame") || "");
+  if (dif_ok.difficult == "") {
     alert("Selecione um nível");
     e.preventDefault();
   }
+  salveLife(dif_ok.difficult);
 }
 
-function salveLife() {
-  InformUser.qtd_life = "10";
+function salveLife(e: string) {
+  console.log(e);
+
+  switch (e) {
+    case "hard":
+      InformUser.qtd_life = "30";
+      break;
+    case "normal":
+      InformUser.qtd_life = "20";
+      break;
+    case "easy":
+      InformUser.qtd_life = "10";
+      break;
+    default:
+      InformUser.qtd_life = "20";
+  }
   saveGameData();
 }
 
@@ -37,17 +75,6 @@ function salveTime() {
     saveGameData();
   }
 }
-
-// EVENTS
-
-ContainerDifficult.addEventListener("click", alterDifficult);
-link_start.addEventListener("click", (x) => {
-  salveTime();
-  StartGame(x);
-});
-btn_config?.addEventListener("click", configInf);
-
-// FUNCTION
 function alterDifficult(e: Event): void {
   const element = e.target! as HTMLElement;
   const show_dif = document.getElementById("show_difficult")!;
@@ -86,35 +113,43 @@ function saveGameData() {
     difficult: InformUser.difficult,
     qtd_life: InformUser.qtd_life,
     time: InformUser.time,
-    
   };
 
   const gameDataString = JSON.stringify(gameData);
   localStorage.setItem("infoGame", gameDataString);
 }
 
-// function CheckDifficult() {
-//   const gameDataString = localStorage.getItem("infoGame");
-//   if (gameDataString) {
-//     const gameData = JSON.parse(gameDataString);
-//     InformUser.difficult = gameData.difficult || "normal";
-//     InformUser.qtd_life = gameData.qtd_life || "10";
-//     InformUser.time = gameData.time || "";
-//   } else {
-//     saveGameData();
-//   }
-// }
 function CheckDifficult() {
+  const show_dif = document.getElementById("show_difficult")!;
   const dif = JSON.parse(localStorage.getItem("infoGame")!);
+
   InformUser.difficult = dif.difficult || "normal";
-  if (dif) {
+
+  if (dif.difficult) {
     (
       document.querySelector(`#${dif.difficult}`) as HTMLElement
     ).firstElementChild!.classList.add("current-level");
+
+    show_dif.innerText = dif.difficult;
+
+    switch (show_dif.innerText) {
+      case "hard":
+        show_dif.style.color = "#9c0404";
+        break;
+      case "normal":
+        show_dif.style.color = "#4270be";
+        break;
+      case "easy":
+        show_dif.style.color = "green";
+        break;
+      default:
+        // Defina uma cor padrão aqui, se desejar
+        show_dif.style.color = "";
+    }
   } else {
     (
       document.querySelector(`#${dif.difficult}`) as HTMLElement
     ).firstElementChild!.classList.add("current-level");
-    saveGameData()
+    saveGameData();
   }
 }

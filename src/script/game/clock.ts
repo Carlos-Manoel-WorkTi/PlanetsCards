@@ -13,8 +13,8 @@ class CLOCK implements clock_interface {
   private intervalId: NodeJS.Timeout | null = null;
 
   constructor(initialTime: number) {
-    this.time = initialTime * 1000; // Convertendo segundos para milissegundos
-    this.current_time = initialTime * 1000; // Convertendo segundos para milissegundos
+    this.time = initialTime * 1000; 
+    this.current_time = initialTime * 1000; 
   }
 
   start(): void {

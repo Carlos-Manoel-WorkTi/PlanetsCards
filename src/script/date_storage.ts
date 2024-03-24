@@ -1,3 +1,4 @@
+// KEY: infoGame
 const InformUser = {
   difficult: "normal",
   qtd_life: "20",

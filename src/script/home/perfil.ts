@@ -8,7 +8,7 @@ if (User) {
 }
 const Logado = JSON.parse(localStorage.getItem("Logado")!);
 
-export function HandlePerfil(event: Event): void {
+function HandlePerfil(event: Event): void {
   const div = document.createElement("div");
 
   const Element_perfil = `
@@ -92,7 +92,7 @@ function generateTable() {
 
   return table;
 }
-export function generateUser() {
+export default function generateUser() {
   const Element =
     Logado.sign
       ? ` 
@@ -140,7 +140,7 @@ function CalculeXp(total: number, total_xp: number): number {
   let porcentagem: number = total / total_xp;
   const porcentagemEmPercentual: number = (porcentagem / 100) * 100;
   porcentagem = Math.min(porcentagem, 100);
-  console.log(porcentagemEmPercentual);
+ 
 
   return porcentagemEmPercentual;
 }
