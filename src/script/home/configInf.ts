@@ -17,7 +17,7 @@ export default function configInf(e: Event) {
                         <li><a href="#">Conta</a></li>
                         <li><a href="#">Perfil</a></li>
                         <li><a href="#">Privacidade</a></li>
-                        <li><a href="#">Sobre</a></li>
+                        <li><a href="./../../../about.html">Sobre</a></li>
                         <li><a href="#">Sair</a></li>
                     </ul>
                 </div>

@@ -170,7 +170,7 @@ html {
   transform: scale(1.1);
 }
 #choose-time {
-  z-index: 15;
+  z-index: 11;
   position: absolute;
   color: white;
   margin-top: 70vh;
@@ -200,6 +200,46 @@ html {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.946);
   outline: none;
+}
+
+#permission-message {
+  display: none;
+  padding: 25px;
+  background-color: #0a0a0a;
+  border: 1px solid #1f1e1e;
+  color: white;
+  border-radius: 5px;
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: start;
+  z-index: 15;
+  font-size: 1.2em;
+  border-radius: 10px;
+}
+#bloco_btn_cookies {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#acceptButton,
+#rejectButton {
+  width: 45%;
+  border: none;
+  padding: 10px;
+  color: white;
+  font-size: 0.8em;
+  border-radius: 10px;
+}
+#acceptButton {
+  background-color: rgb(0, 115, 255);
+}
+#rejectButton {
+  background-color: red;
 }
 @media screen and (max-width: 800px) {
   #choose-time label {

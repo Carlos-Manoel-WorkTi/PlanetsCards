@@ -110,7 +110,7 @@ export default function generateUser() {
     </div>
 `
       : `
-    <a href='#' id='link_conta'>
+    <a href='./../../../login' id='link_conta'>
 <img class="custom-icon" src="https://cdn-icons-png.flaticon.com/128/2521/2521826.png" alt="">
 <div class="custom-text">
     Criar conta

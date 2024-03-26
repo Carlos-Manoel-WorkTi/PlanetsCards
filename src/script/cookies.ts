@@ -61,8 +61,10 @@ export function applyContent() {
           <p>Este site utiliza armazenamento local e cookies para melhorar sua experiência. Deseja permitir o uso do
               armazenamento
               local e cookies?</p>
+          <div id='bloco_btn_cookies'>
           <button id="acceptButton">Permitir</button>
           <button id="rejectButton">Negar</button>
+          </div>
       `;
 
   body.appendChild(permissionMessageDiv);
@@ -73,7 +75,7 @@ export function updateUserCookie(userCokies:any) {
     /(?:(?:^|.*;\s*)cookiePermission\s*\=\s*([^;]*).*$)|^.*$/,
     "$1"
   );
-  console.log(permissionCookie);
+
   if (permissionCookie !== "granted") {
     document.cookie = "User=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     return;

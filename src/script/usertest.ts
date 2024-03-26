@@ -5,7 +5,7 @@ const UserCokies = {
   total_xp: 0,
   level: 0,
   imagem: "",
-  sign: true,
+  sign: false,
 };
 
 const User = getUserFromCookie();
