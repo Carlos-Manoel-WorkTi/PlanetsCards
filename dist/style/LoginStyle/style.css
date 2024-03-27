@@ -24,8 +24,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
-
 #form {
   width: 29%;
   height: 70%;
@@ -208,8 +208,8 @@ aside {
 }
 
 .text_error {
-  color: rgb(211, 51, 51);
-  width: 50%;
+  color: rgb(197 45 99);
+  width: 305px;
   display: flex;
   justify-content: end;
   padding: 1px;
@@ -231,7 +231,7 @@ aside {
   font-weight: 300;
   font-size: 0.9em;
   margin-left: 10px;
-  min-width: 320px;
+  min-width: 286px;
 }
 #bnt_submite:hover {
   transform: scale(1.05);
@@ -240,7 +240,7 @@ aside {
 #forgot_password {
   width: 50%;
   text-decoration: none;
-  color: rgb(60, 60, 244);
+  color: rgb(75 102 226);
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -258,7 +258,13 @@ aside {
 .link_login:hover {
   transform: scale(1.2);
 }
+#bloco_links_footer {
+  display: none;
+}
 @media screen and (max-width: 1240px) {
+  #bnt_submite {
+    min-width: 246px;
+  }
   #logo {
     font-size: 3.5em;
     letter-spacing: 0.1em;
@@ -281,9 +287,6 @@ aside {
   #bloco_first_input,
   #bloco_second_input {
     min-width: 576px;
-  }
-  #bnt_submite {
-    min-width: 280px;
   }
   #bloco_links {
     width: 29%;
@@ -322,9 +325,9 @@ aside {
   #bloco_second_input {
     min-width: 485px;
   }
-  #bnt_submite {
+  /* #bnt_submite {
     min-width: 229px;
-  }
+  } */
   #bloco_links {
     width: 39%;
   }
@@ -335,37 +338,30 @@ aside {
     font-size: 1.2em;
   }
 }
-@media screen and (max-width: 790px) {
-  #logo {
-    font-size: 2.3em;
+
+@media screen and (max-width: 800px) {
+  body {
+    flex-direction: column;
   }
-  #msg {
-    font-size: 1.1em;
+  footer {
+    width: 50%;
   }
-  #sign_up {
-    height: 43px;
-    font-size: 1.1em;
-    min-width: 113px;
+  #bloco_links_footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.9em;
   }
-  #bloco_links a {
-    font-size: 0.8em;
+  #bloco_links_footer a {
+    color: rgba(195, 194, 194, 0.849);
   }
-  #bloco_links {
-    width: 40%;
+  #create_account,
+  #forgot_password {
+    font-size: 0.9em;
   }
-  aside {
-    padding: 2% 2%;
-    justify-content: center;
-    margin-bottom: 10%;
+  #create_account {
+    margin-top: 65px;
   }
-  #form {
-    padding: 2% 3%;
-    width: 41%;
-    height: 79%;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 680px) {
   aside {
     display: none;
   }
@@ -381,11 +377,15 @@ aside {
     display: none;
   }
   #title2 {
-    width: 293px;
-    border-bottom: 1px solid rgba(225, 225, 225, 0.624);
+    /* width: 293px; */
+    /* border-bottom: 1px solid rgba(225, 225, 225, 0.624); */
     padding: 10px 0;
     color: rgba(240, 248, 255, 0.839);
     display: block;
+    font-weight: 200;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    margin: 15px 0px 7px 0px;
   }
   #logo2 {
     font-size: 2.1em;
@@ -407,33 +407,76 @@ aside {
     min-width: 280px;
   }
   .ipt {
-    min-width: 285px;
+    min-width: 305px;
   }
   #bloco_first_input label,
   #bloco_second_input label {
-    min-width: 285px;
+    min-width: 305px;
+  }
+  #bnt_submite {
+    width: 50%;
+    min-width: 305px;
+    max-width: none;
+  }
+}
+@media screen and (max-width: 555px) {
+  .text_error {
+    width: 305px;
+  }
+  footer {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 385px) {
+  footer {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 355px) {
+  .ipt {
+    min-width: 266px;
+  }
+  #bloco_first_input label,
+  #bloco_second_input label {
+    min-width: 266px;
+  }
+  #bnt_submite {
+    width: 265px;
+    min-width: 265px;
+  }
+  .text_error {
+    width: 266px;
   }
 }
 @media screen and (max-width: 310px) {
   body {
     min-width: 290px;
-    background: black;
+    background: radial-gradient(
+      ellipse at top right,
+      rgb(17, 2, 32),
+      rgb(0, 0, 0),
+      #000000
+    );
   }
   #bloco_first_input,
   #bloco_second_input {
-    min-width: 290px;
-  }
-  #title2 {
-    width: 250px;
+    min-width: 230px;
   }
   #logo2 {
     font-size: 1.9em;
   }
   .ipt {
-    min-width: 250px;
+    min-width: 230px;
   }
   #bloco_first_input label,
   #bloco_second_input label {
-    min-width: 250px;
+    min-width: 230px;
+  }
+  #bnt_submite {
+    width: 220px;
+    min-width: 220px;
+  }
+  .text_error {
+    width: 220px;
   }
 }
