@@ -4,7 +4,8 @@ module.exports = {
     mode: 'development',
     entry: {
         start: './src/script/home/home.ts',
-        game: './src/script/game/game.ts',      
+        game: './src/script/game/game.ts',  
+        login: './src/script/login/login.ts',        
     },
     output: {
         filename: '[name].js',
@@ -19,8 +20,8 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            '@babel/preset-env', // Preset para configurar o ambiente de execução
-                            '@babel/preset-typescript' // Preset para compilar TypeScript
+                            '@babel/preset-env', 
+                            '@babel/preset-typescript' 
                         ]
                     }
                 }

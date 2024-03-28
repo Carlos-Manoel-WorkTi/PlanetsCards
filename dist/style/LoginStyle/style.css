@@ -28,7 +28,7 @@ body {
 }
 #form {
   width: 29%;
-  height: 70%;
+  height: 80%;
   color: white;
   padding: 2% 4%;
   border-radius: 0px;
@@ -44,7 +44,7 @@ body {
 }
 aside {
   width: 45%;
-  height: 70%;
+  height: 80%;
   color: white;
   padding: 2% 4%;
   border-radius: 0px;
@@ -232,6 +232,7 @@ aside {
   font-size: 0.9em;
   margin-left: 10px;
   min-width: 286px;
+  height: 41px;
 }
 #bnt_submite:hover {
   transform: scale(1.05);
@@ -259,6 +260,19 @@ aside {
   transform: scale(1.2);
 }
 #bloco_links_footer {
+  display: none;
+}
+
+#links_count {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#links_count span {
   display: none;
 }
 @media screen and (max-width: 1240px) {
@@ -325,9 +339,7 @@ aside {
   #bloco_second_input {
     min-width: 485px;
   }
-  /* #bnt_submite {
-    min-width: 229px;
-  } */
+
   #bloco_links {
     width: 39%;
   }
@@ -346,11 +358,13 @@ aside {
   footer {
     width: 50%;
   }
+
   #bloco_links_footer {
     width: 100%;
     display: flex;
     justify-content: space-around;
     font-size: 0.9em;
+    margin-top: -30px;
   }
   #bloco_links_footer a {
     color: rgba(195, 194, 194, 0.849);
@@ -405,6 +419,8 @@ aside {
   #bloco_first_input,
   #bloco_second_input {
     min-width: 280px;
+    height: 94px;
+    margin-bottom: 5px;
   }
   .ipt {
     min-width: 305px;
@@ -418,8 +434,36 @@ aside {
     min-width: 305px;
     max-width: none;
   }
+
+  #links_count {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  #links_count span {
+    display: block;
+    margin-left: 20px;
+  }
+  #create_account,
+  #forgot_password {
+    display: flex;
+    align-items: center;
+  }
+  #create_account,
+  #forgot_password {
+    margin-top: 0px;
+    width: 60%;
+  }
 }
 @media screen and (max-width: 555px) {
+  #links_count {
+    width: 305px;
+    margin-top: 50px;
+  }
   .text_error {
     width: 305px;
   }
@@ -446,6 +490,13 @@ aside {
   }
   .text_error {
     width: 266px;
+  }
+  #links_count {
+    width: 265px;
+    margin-top: 50px;
+  }
+  #links_count a {
+    font-size: 0.8em;
   }
 }
 @media screen and (max-width: 310px) {

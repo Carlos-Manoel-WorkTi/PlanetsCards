@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script defer src="./dist/script/login.js"></script>
     <link rel="stylesheet" href="./dist/style/LoginStyle/style.css">
     <title>Login</title>
 </head>
@@ -17,19 +17,23 @@
         <div id="container_inputs">
             <div id="bloco_first_input">
                 <label class="lb" for="email">Email</label>
-                <input class="ipt" type="text" placeholder="email@dominio.com">
-                <span class="text_error"></span>
+                <input id="campo_email" class="ipt" type="text" placeholder="email@dominio.com">
+                <span class="text_error" id="text_error_email"></span>
             </div>
             <div id="bloco_second_input">
                 <label class="lb" for="senha">Senha</label>
-                <input class="ipt" type="text" placeholder="Digite sua senha...">
-                <span class="text_error"></span>
+                <input id="campo_password" class="ipt" type="text" placeholder="Digite sua senha...">
+                <span class="text_error" id="text_error_password"></span>
             </div>
         </div>
 
         <button id="bnt_submite">Entrar</button>
-        <a class="link_login" id="create_account" href="#">Esqueceu a senha</a>
-        <a class="link_login" id="forgot_password" href="#">Criar conta</a>
+        <div id="links_count">
+            <a class="link_login" id="create_account" href="#">Esqueceu a senha</a>
+            <span >&vert;</span>
+            <a class="link_login" id="forgot_password" href="#">Criar conta</a>
+        </div>
+
     </form>
     <span id="divisor"></span>
     <aside>
