@@ -49,6 +49,6 @@ function handlePassword(e: Event): void {
 }
 
 function submitForm(e: Event) {
+    window.location.href = "/";
   e.preventDefault();
-  window.location.href = "/";
 }
