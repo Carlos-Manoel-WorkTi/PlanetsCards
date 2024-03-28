@@ -20,7 +20,7 @@ export function getUserFromCookie() {
 }
 
 export function acceptPermissions() {
-  document.cookie = "cookiePermission=granted; path=/";
+  document.cookie = "cookiePermission=granted;max-age=31536000; path=/";
   document.cookie = "User=" + JSON.stringify(User) + "; max-age=1000; path=/";
 
   localStorage.setItem(
@@ -33,10 +33,11 @@ export function acceptPermissions() {
   );
 
   document.getElementById("permission-message")!.style.display = "none";
+
+  updateUserCookie(User);
 }
 
 export function rejectPermissions() {
-  console.log("Permissão negada para uso de cookies e localStorage.");
   document.getElementById("permission-message")!.style.display = "none";
 }
 
@@ -70,17 +71,18 @@ export function applyContent() {
   body.appendChild(permissionMessageDiv);
 }
 
-export function updateUserCookie(userCokies:any) {
+export function updateUserCookie(userCokies: any) {
   const permissionCookie = document.cookie.replace(
     /(?:(?:^|.*;\s*)cookiePermission\s*\=\s*([^;]*).*$)|^.*$/,
     "$1"
   );
 
   if (permissionCookie !== "granted") {
-    document.cookie = "User=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "User=; 01 Jan 1970 00:00:00 UTC; path=/;";
     return;
   }
 
   const userJson = JSON.stringify(userCokies);
-  document.cookie = `User=${userJson}; path=/`;
+  document.cookie = `User=${userJson};max-age=31536000; path=/`;
+  console.log(userJson, 1);
 }

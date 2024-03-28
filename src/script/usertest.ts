@@ -1,6 +1,6 @@
 import { getUserFromCookie, updateUserCookie } from "./cookies";
 
-const UserCokies = {
+const User = {
   nome: "",
   total_xp: 0,
   level: 0,
@@ -8,8 +8,7 @@ const UserCokies = {
   sign: false,
 };
 
-const User = getUserFromCookie();
 
-updateUserCookie(UserCokies);
 
-export default UserCokies;
+
+export default User;
