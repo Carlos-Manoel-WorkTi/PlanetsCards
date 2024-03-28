@@ -11,7 +11,7 @@ const btn_submite = document.getElementById("bnt_submite") as HTMLButtonElement;
 // EVENTS
 campo_email.addEventListener("change", handleEmail);
 campo_password.addEventListener("input", handlePassword);
-btn_submite.addEventListener("submit", submitForm);
+btn_submite.addEventListener("click", submitForm);
 
 function handleInput(
   elementId: string,
@@ -49,6 +49,7 @@ function handlePassword(e: Event): void {
 }
 
 function submitForm(e: Event) {
-    window.location.href = "/";
   e.preventDefault();
+  alert("ainda incompleto");
+  window.location.href = "http://127.0.0.1:5500/";
 }

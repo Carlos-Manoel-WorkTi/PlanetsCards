@@ -5,7 +5,7 @@ const User = {
   total_xp: 0,
   level: 0,
   imagem: "",
-  sign: false,
+  sign: true,
 };
 
 
