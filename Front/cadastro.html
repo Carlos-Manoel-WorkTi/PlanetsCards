@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">                        
+    <link rel="stylesheet" href="./dist/style/RegisterStyle/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script defer src="./dist/script/register.js"></script>
+    <title>register</title>
+
+</head>
+<body>
+
+    <div class="container" >
+      <form id="form" action="">
+        <div class="row center"><h1>Planestcards</h1></div>
+        <div class="row center"><h4>Crie seu cadastro</h4></div>
+        <div class="row">
+            <div class="col s12 m8 l8 xl8">
+                <label id="labelnome" for="nome">Nome <span style="color: rgb(153, 51, 51); font-size: 1.5em;">*</span></label>
+                <input  autocomplete="username" type="text" placeholder="Digite seu nome..." id="nome">
+            </div>
+            <div class="col s12 m4 l4 xl4">
+                <label id="labeldata_nascimento" for="data_nascimento">Idade<span style="color: rgb(153, 51, 51); font-size: 1.5em;">*</span></label>
+                <input autocomplete="birthday" type="text" class="datepicker" placeholder="Ex:  00/00/0000" id="data_nascimento">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m7 l7 xl7">
+                <label id="labelemail" for="email">Email<span style="color: rgb(153, 51, 51); font-size: 1.5em;">*</span></label>
+                <input   autocomplete="useremail" type="text" placeholder="Digite seu email..." id="email">
+            </div>
+            <div class="col s12 m5 x5 xl5">
+                <label id="labeltelefone" for="telefone">Telefone<span style="color: rgb(153, 51, 51); font-size: 1.5em;">*</span></label>
+                <input type="text" placeholder="Ex:  +55 (99) 9 9999-9999" id="telefone">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 x6 xl6">
+                <label id="labelsenha" for="senha">Senha<span style="color: rgb(153, 51, 51); font-size: 1.5em;">*</span></label>
+                <input  autocomplete="new-password" type="password" placeholder="Digite ssua senha..." id="senha">
+            </div>
+            <div class="col s12 m6 x6 xl6">
+                <label id="labelconfirmar_senha" for="confirmar_senha">Confirmar senha<span style="color: rgb(153, 51, 51); font-size: 1.5em;">*</span></label>
+                <input  autocomplete="new-password"  type="password" placeholder="Digite novamente..." id="confirmar_senha">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m4 l4 xl4">
+                <select id="genero">
+                    <option value="" disabled selected id="select-genero" >Selecione seu genero </option>
+                    <option value="mulher" >Mulher</option>
+                    <option value="homem">Homem</option>
+                    <option value="não_binário">Não-binário</option>
+                    <option value="gênero_fluido">Gênero fluido</option>
+                    <option value="agênero">Agênero</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <label id="labelgenero" >Genero <span style="color: rgb(153, 51, 51); font-size: 1.5em;">*</span></label>
+            </div>
+            <div class="col s12 m6 l5 xl4 right ">  
+                <p>
+                    <label>
+                      <input type="checkbox" id="termos" />
+                      <span id="textTermos">Concordo com os <a href="http://127.0.0.1:5500/" id="textTermo" style="color: rgb(114, 33, 202);margin-left: 5px;margin-top: -1px;" >termos <span id="textTerm"  style="font-size: 1.1em; color: rgb(123, 8, 218);">&#187;</span></a></span>
+                    </label>
+                </p>
+            </div>
+    
+        </div>
+        <div class="row center">
+            <button class="btn-large waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+     </form>
+    </div>
+    <footer class="row" style="height: 40px;">
+         <div class="col s12 m12 l12 xl12 center">
+            <ul id="links_footer">
+                <li><a href="#">pais</a></li>
+                <li><a href="#">sobre</a></li>
+                <li><a href="#">contato</a></li>
+                <li><a href="./login.html" id="ere">Ja tem Conta?</a></li>
+            </ul>
+         </div>
+
+    </footer>
+    <script>
+
+        $(document).ready(function(){
+            $('.datepicker').datepicker();
+            $('select').formSelect();
+        });
+ 
+    </script>
+</body>
+</html>

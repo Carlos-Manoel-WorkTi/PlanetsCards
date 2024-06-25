@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "module": "commonjs",
+    "target": "es2016",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/*/*.ts",
+    "src/script/home/home.ts",
+    "src/script/profile/perfil.ts",
+    "src/script/home/configInf.ts",
+    "src/script/game/cards.ts",
+    "src/script/game/clock.ts",
+    "src/script/game/game.ts",
+    "src/script/game/generateList.ts",
+    "src/script/game/menu.ts",
+    "src/script/game/restart.ts",
+    "src/script/game/turnCard.ts",
+    "src/script/game/win.ts",
+    "src/script/profile/user.ts"
+  ],
+  "exclude": ["node_modules"]
+}

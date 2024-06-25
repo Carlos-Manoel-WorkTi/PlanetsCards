@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400..800&display=swap');
+.winner-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.745);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 13;
+}
+#container_winner{
+  width: 600px;
+  height: 500px;
+  background-color: rgb(27, 27, 27);
+}
+#header_winner{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#titulo_winner {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: 400;
+  font-style: normal;
+}
+#titulo_winner h3{
+  font-size: 2.6em;
+  margin: 5px;
+  margin-top: 20px;
+  font-family: "Lakki Reddy", serif;
+  font-weight: 400;
+  font-style: normal;
+  animation: winnerEfect 8s linear infinite;
+}
+#titulo_winner h4{
+  font-size: 2.6em;
+  margin: 5px;
+  margin-top: 20px;
+  font-family: "Lakki Reddy", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: red;
+}
+.start{
+  height: 34px;
+  margin: 5px;
+}
+#subtitle{
+  display: flex;
+  border-bottom: 1PX solid white;
+  justify-content: space-between;
+  width: 100%;
+}
+#subtitle h1{
+  margin: 0 10px;
+  font-weight: 400;
+  animation: floatAndBlink 8s linear infinite;
+}
+#subtitle h5{
+  font-family: "Metal Mania", system-ui;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5em;
+  margin: 0 10px;
+  color: azure;
+  
+}
+#inf_game{
+  height: 62%;
+  width: 600px;
+  overflow: hidden;
+  margin-top: 5px;
+
+}
+#inf_game li{
+  text-decoration: none;
+  list-style: none;
+  background-color: rgb(45, 45, 45);
+  height: 20%;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  padding-left: 19px;
+  
+}
+#inf_game li *{
+  font-family: "Baloo Chettan 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2em;
+
+}
+#footer_winner{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.labal_inf_game{
+    color: #dcdcdc;
+}
+
+.lose_color{
+  color: #eb4949;
+}
+.win_color{
+  color: #49eb49;
+}
+
+
+
+
+.animate__animated.animate__bounce {
+  --animate-duration: 1s;
+  --animate-delay: 0.9s;
+}
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 10% 10%;
+    height: 70%;
+  }
+  #container_winner {
+    width: 400px;
+  }
+  #inf_game {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .content {
+    padding: 10% 10%;
+    height: 70%;
+  }
+  #titulo_winner h3 {
+    font-size: 2em;
+    margin-top: 19px;
+  }
+  
+  #container_winner {
+    height: 510px;
+  }
+  .start {
+    height: 20px;
+  }
+  #container_winner {
+    width: 95%;
+  }
+  #inf_game {
+    width: 100%;
+    height: 65%;
+
+  }
+}

@@ -1,0 +1,181 @@
+#container_config {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.715);
+}
+#bloco_config {
+  width: 50vw;
+  height: auto;
+  padding-bottom: 50px;
+  background-color: rgb(9, 8, 8);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  text-align: start;
+  color: white;
+}
+#header_config {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#logo_config {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.4em;
+  z-index: 1;
+  color: white;
+  animation: floatAndBlink 8s linear infinite;
+}
+#body_config {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#body_config ul {
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#body_config ul li {
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid white;
+  margin: 5px;
+  width: 60%;
+  border-radius: 10px;
+}
+#body_config ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.7em;
+}
+
+#body_config ul li:hover {
+  border-color: rgb(43, 13, 195);
+  box-shadow: 0 0 10px 5px rgba(43, 13, 195, 0.7);
+}
+
+#body_config ul li:hover a {
+  color: rgb(56, 20, 238);
+}
+
+#container_confirm{
+  position: absolute;
+  z-index: 16;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.792);
+}
+#container_confirm2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(45deg,rgb(8, 8, 8),rgb(17, 17, 17));
+  width: 50%;
+  height: 50vh;
+  min-height: 200px;
+  color: white;
+  border-radius: 10px;
+}
+
+#container_confirm2 h6{
+  font-size: 2em;
+  margin: 30px 0;
+}
+#btns_confirm_logout{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  height: 40%;
+  align-items: center;
+}
+#btns_confirm_logout button{
+  padding: 15px;
+  width: 30%;
+  height: 40%;
+  background-color: white;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 1em;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+#btns_confirm_logout #btnyes{
+  background-color: green;
+}
+#btns_confirm_logout #btnnot{
+  background-color: red;
+}
+#btnyes:hover,#btnnot:hover{
+  transform: scale(1.1);
+  
+}
+
+@media screen and (max-width: 1200px) {
+  #container_confirm2{
+    width: 60%;
+  }
+  #container_confirm2 h6{
+    font-size: 1.8em;
+    margin: 30px 0;
+  }
+}
+@media screen and (max-width: 990px) {
+  #container_confirm2{
+    width: 550px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #config_svg {
+    width: 35px;
+    height: 40px;
+  }
+
+  #bloco_config {
+    width: 70vw;
+    height: auto;
+    padding-bottom: 50px;
+  }
+  #logo_config {
+    font-weight: 400;
+    font-size: 2.2em;
+  }
+}
+@media screen and (max-width: 400px) {
+  #config_svg {
+    width: 35px;
+    height: 40px;
+  }
+  #bloco_config {
+    width: 90vw;
+  }
+  #body_config ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+  }
+}

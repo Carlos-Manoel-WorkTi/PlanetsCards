@@ -1,0 +1,193 @@
+#nave-space-1 {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  z-index: 0;
+  transition: 2s;
+  top: 20%;
+  animation: fly 3s linear infinite, float 3s ease-in-out normal;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(-100%) translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+  }
+  40% {
+  }
+  60% {
+    transform: translateX(50%) translateY(-3 0px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw) translateY(0) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  70% {
+    transform: translateY(-5px);
+  }
+}
+
+/* 2 */
+
+#nave-space-2 {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  z-index: 0;
+  transition: 2s;
+  top: 50%;
+  animation: fly2 8s linear infinite, float2 3s normal;
+}
+
+@keyframes fly2 {
+  0% {
+    transform: translateX(900%) translateY(0) scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(140%) translateY(-100px) scale(1.1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(50%) translateY(0) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(900%) translateY(30%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float2 {
+  70% {
+    transform: translateY(-80px);
+  }
+}
+
+#alien {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 80%;
+  animation: up 15s linear;
+  opacity: 0;
+  z-index: 1;
+}
+@keyframes up {
+  0% {
+    transform: translateY(90vh);
+    opacity: 1;
+  }
+  98% {
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#cometa-1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 35%;
+  opacity: 0;
+  animation: down 1s linear;
+  transform: rotate(40deg);
+}
+
+#cometa-2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 25%;
+  opacity: 0;
+  animation: down 1.5s linear;
+  transform: rotate(40deg);
+}
+#cometa-3 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 25%;
+  opacity: 0;
+  animation: down 1s linear;
+  transform: rotate(40deg);
+}
+@keyframes down {
+  0% {
+    transform: translateY(-100%) translateX(400%); /* Added translateX for diagonal movement */
+    opacity: 1;
+  }
+  98% {
+    transform: translateY(300%) translateX(100%); /* Adjusted translateX for ending position */
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #alien {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 82vw;
+    animation: up 15s linear;
+    opacity: 0;
+  }
+
+  #cometa-1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    opacity: 0;
+    animation: down 1s linear;
+    transform: rotate(40deg);
+  }
+
+  #cometa-2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 25%;
+    opacity: 0;
+    animation: down 1.5s linear;
+    transform: rotate(40deg);
+  }
+  #cometa-3 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 25%;
+    opacity: 0;
+    animation: down 1s linear;
+    transform: rotate(40deg);
+  }
+
+  #nave-space-2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 0;
+    transition: 2s;
+    top: 50%;
+    animation: f ly2 8s linear infinite, float2 3s normal;
+  }
+  #nave-space-1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 0;
+    transition: 2s;
+    top: 20%;
+    animation: fly 3s linear infinite, float 3s ease-in-out normal;
+  }
+}

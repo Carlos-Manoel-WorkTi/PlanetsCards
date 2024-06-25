@@ -1,0 +1,14 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com");
+@import url("https://fonts.gstatic.com") crossOrigin;
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+
+/* STYLES */
+@import url("./../../../src/style/GameStyle/index.css");
+@import url("./../../../src/style/animation/animation.css");
+@import url("./../../../src/style/GameStyle/card-easy.css");
+@import url("./../../../src/style/GameStyle/card-hard.css");
+@import url("./../../../src/style/GameStyle/card-normal.css");
+@import url("./../../../src/style/animation/cardanimation.css");
+@import url("./../../../src/style/animation/nav-space.css");
+@import url("./../../../src/style/GameStyle/winner.css");

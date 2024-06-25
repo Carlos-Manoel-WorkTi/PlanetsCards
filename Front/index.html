@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link async  rel="stylesheet" href="./dist/style/homeStyle/style.css">
+    <link rel="stylesheet" href="./src/style/perfil/perfilFull.css">
+    <script src="./dist/script/start.js" defer></script>
+    <script defer src="./dist/script/profile.js"></script>  
+    <title>PlanetsCard</title>
+
+  
+</head>
+
+<body id="root">
+
+    <header id="header">
+        <nav id="nav">
+            <img id="config_svg" src="public/config.svg" alt="">
+        </nav>
+    </header>
+
+
+    <main>
+        <section id="container-difficult">
+    
+            <div id="choose-time">
+                <label for="tempo">Tempo:</label>
+                <select name="tempo" id="tempo">
+                    <option value="20">20 segundos</option>
+                    <option value="40">40 segundos</option>
+                    <option value="60">1 minuto</option>
+                    <option value="90">1 min 30 seg</option>
+                    <option value="120">2 minutos</option>
+                    <option value="150">2 min 30 seg</option>
+                    <option value="180">3 minutos</option>
+                </select>
+            </div>
+            <div id="difficult" class="difficult-section">
+                <h3>Dificuldade: <span id="show_difficult" style="color:#4270be">Normal</span></h3>
+                <ul>
+                    <li id="easy"><button class="easy-btn choose-difficult">Fácil</button></li>
+                    <li id="normal"><button class="normal-btn choose-difficult">Normal</button></li>
+                    <li id="hard"><button class="hard-btn choose-difficult">Difícil</button></li>
+                </ul>
+            </div>
+
+        </section>
+        <section id="section">
+            <h1 id="title">PlanetsCard</h1>
+            <a id="link_start" href="./game.html">Start</a>
+        </section>
+        <div id="containerVideo">
+            <div class="overlay"></div>
+            <video id="backgroundVideo" autoplay muted loop>
+                <source src="./public/vdbg.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        </div>
+        
+    </main>
+   
+</body>
+
+</html>
